@@ -17,162 +17,2071 @@
 	<div class="row mb-2 mw-100 mh-100"style="border:0">
 	  <div class="col-md-12 col-lg-12 text-center">
 		<p class="text-secondary text-light	">Kalkulator ini dapat digunakan untuk menghitung Indeks Prestasi Kumulatif (IPK)<br>
-		  Standar bobot nilai yang digunakan adalah sebagai berikut:<br>
-		    A = 4,00, A- = 3,70, B+ = 3,3, B = 3,00, B- = 2,70, C+ = 2,50, C = 2,00, C- = 1,50, D = 1,00, E = 0,0</p>
+		  Standar bobot indeks nilai yang digunakan adalah sebagai berikut:<br>
+			A = 4,00; A- = 3,70; B+ = 3,3; B = 3,00; B- = 2,70; C+ = 2,50; C = 2,00; C- = 1,50; D = 1,00; E = 0,0<br><br>
+			Silahkan masukkan Indeks Nilai dalam huruf kapital beserta tanda (+) dan (-) jika ada (contoh: A; B+; C-)</p>
 		  </div>
 	   </div>
 	</div>
 
+<!-- Semester 1-->
+
 	<div class="row mb-4">
-	  <div class="col-lg-6 col-sm-12">
-		<div class="card">
-		  <div class="card-header bg-secondary text-white">
-			<center><h5>Semester 1</h5></center>
-		</div>
+		<div class="col-lg-6 col-sm-12">
+			<div class="card" style="border:0">
+		  		<div class="card-header bg-secondary text-white">
+					<center><h5>Semester 1</h5></center>
+	</div>
 									
-	<div class="card-body">
-	  <div class="row mb-1">
-		<div class="col-6">
-		  <div class="input-group">
-			<input id="mk01_sm01" type="text" pattern="[ABCDEabcde]" title="A/B/C/D/E" maxlength="1" class="form-control" placeholder="Indeks Nilai">
-		</div>
-	</div>
-		<div class="col-6">
-		  <div class="input-group">
-			<input id="sk01_sm01" type="number" min="1" max="8" class="form-control" placeholder="SKS 1 - 8">
+		
+	<div class="card-body bg-dark">
+		<div class="row mb-1">
+			<div class="col-4">
+				<div class="input-group">
+					<input type="text" id="nm01-sm01" class="form-control" placeholder="Nama Mata Kuliah">
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="input-group">
+					<input id="nl01-sm01" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+						title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="input-group">
+					<input id="sk01-sm01" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+				</div>
 			</div>
 		</div>
-	</div>
 
 		<div class="row mb-1">
-		  <div class="col-6">
-			<div class="input-group">
-			  <input id="mk02_sm01" type="text" pattern="[ABCDEabcde]" title="A/B/C/D/E" maxlength="1" class="form-control" placeholder="Indeks Nilai">
+			<div class="col-4">
+				<div class="input-group">
+					<input type="text" id="nm02-sm01" class="form-control" placeholder="Nama Mata Kuliah">
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="input-group">
+					<input id="nl02-sm01" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+						title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="input-group">
+					<input id="sk02-sm01" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+				</div>
 			</div>
 		</div>
-		  <div class="col-6">
-			<div class="input-group">
-			  <input id="sk02_sm01" type="number" min="1" max="8" class="form-control" placeholder="SKS 1 - 8">
-			</div>
-		</div>
-	</div>
-										
-		<div class="row mb-1">
-		  <div class="col-6">
-			<div class="input-group">
-			  <input id="mk03_sm01" type="text" pattern="[ABCDEabcde]" title="A/B/C/D/E" maxlength="1" class="form-control" placeholder="Indeks Nilai">
-			</div>
-		</div>
-		  <div class="col-6">
-			<div class="input-group">
-			  <input id="sk03_sm01" type="number" min="1" max="8" class="form-control" placeholder="SKS 1 - 8">
-			</div>
-		</div>
-	</div>
-										
-		<div class="row mb-1">
-		  <div class="col-6">
-			<div class="input-group">
-			  <input id="mk04_sm01" type="text" pattern="[ABCDEabcde]" title="A/B/C/D/E" maxlength="1" class="form-control" placeholder="Indeks Nilai">
-			</div>
-		</div>
-		  <div class="col-6">
-			<div class="input-group">
-			  <input id="sk04_sm01" type="number" min="1" max="8" class="form-control" placeholder="SKS 1 - 8">
-			</div>
-		</div>
-	</div>
 
 		<div class="row mb-1">
-		  <div class="col-6">
-			<div class="input-group">
-			  <input id="mk05_sm01" type="text" pattern="[ABCDEabcde]" title="A/B/C/D/E" maxlength="1" class="form-control" placeholder="Indeks Nilai">
+			<div class="col-4">
+				<div class="input-group">
+					<input type="text" id="nm03-sm01" class="form-control" placeholder="Nama Mata Kuliah">
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="input-group">
+					<input id="nl03-sm01" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+						title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="input-group">
+					<input id="sk03-sm01" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+				</div>
 			</div>
 		</div>
-		  <div class="col-6">
-		    <div class="input-group">
-			  <input id="sk05_sm01" type="number" min="1" max="8" class="form-control" placeholder="SKS 1 - 8">
-			</div>
-		</div>
-	</div>
-										
+
 		<div class="row mb-1">
-		  <div class="col-6">
-			<div class="input-group">
-			  <input id="mk06_sm01" type="text" pattern="[ABCDEabcde]" title="A/B/C/D/E" maxlength="1" class="form-control" placeholder="Indeks Nilai">
+			<div class="col-4">
+				<div class="input-group">
+					<input type="text" id="nm04-sm01" class="form-control" placeholder="Nama Mata Kuliah">
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="input-group">
+					<input id="nl04-sm01" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+						title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="input-group">
+					<input id="sk04-sm01" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+				</div>
 			</div>
 		</div>
-		  <div class="col-6">
-			<div class="input-group">
-			  <input id="sk06_sm01" type="number" min="1" max="8" class="form-control" placeholder="SKS 1 - 8">
+
+		<div class="row mb-1">
+			<div class="col-4">
+				<div class="input-group">
+					<input type="text" id="nm05-sm01" class="form-control" placeholder="Nama Mata Kuliah">
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="input-group">
+					<input id="nl05-sm01" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+						title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="input-group">
+					<input id="sk05-sm01" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+				</div>
 			</div>
 		</div>
-	</div>
+
+		<div class="row mb-1">
+			<div class="col-4">
+				<div class="input-group">
+					<input type="text" id="nm06-sm01" class="form-control" placeholder="Nama Mata Kuliah">
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="input-group">
+					<input id="nl06-sm01" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+						title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="input-group">
+					<input id="sk06-sm01" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+				</div>
+			</div>
+		</div>
 		
 		<div class="row mb-1">
-		  <div class="col-6">
-			<div class="input-group">
-			  <input id="mk07_sm01" type="text" pattern="[ABCDEabcde]" title="A/B/C/D/E" maxlength="1" class="form-control" placeholder="Indeks Nilai">
+			<div class="col-4">
+				<div class="input-group">
+					<input type="text" id="nm07-sm01" class="form-control" placeholder="Nama Mata Kuliah">
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="input-group">
+					<input id="nl07-sm01" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+						title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="input-group">
+					<input id="sk07-sm01" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+				</div>
 			</div>
 		</div>
-		  <div class="col-6">
-			<div class="input-group">
-			  <input id="sk07_sm01" type="number" min="1" max="8" class="form-control" placeholder="SKS 1 - 8">
-			</div>
-		</div>
-	</div>
-						
+
 		<div class="row mb-1">
-		  <div class="col-6">
-			<div class="input-group">
-			  <input id="mk08_sm01" type="text" pattern="[ABCDEabcde]" title="A/B/C/D/E" maxlength="1" class="form-control" placeholder="Indeks Nilai">
+			<div class="col-4">
+				<div class="input-group">
+					<input type="text" id="nm08-sm01" class="form-control" placeholder="Nama Mata Kuliah">
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="input-group">
+					<input id="nl08-sm01" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+						title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="input-group">
+					<input id="sk08-sm01" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+				</div>
 			</div>
 		</div>
-		  <div class="col-6">
-			<div class="input-group">
-			  <input id="sk08_sm01" type="number" min="1" max="8" class="form-control" placeholder="SKS 1 - 8">
-			</div>
-		</div>
-	</div>
-										
+
 		<div class="row mb-1">
-		  <div class="col-6">
-			<div class="input-group">
-			  <input id="mk09_sm01" type="text" pattern="[ABCDEabcde]" title="A/B/C/D/E" maxlength="1" class="form-control" placeholder="Indeks Nilai">
+			<div class="col-4">
+				<div class="input-group">
+					<input type="text" id="nm09-sm01" class="form-control" placeholder="Nama Mata Kuliah">
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="input-group">
+					<input id="nl09-sm01" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+						title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="input-group">
+					<input id="sk09-sm01" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+				</div>
 			</div>
 		</div>
-		  <div class="col-6">
-			<div class="input-group">
-			  <input id="sk09_sm01" type="number" min="1" max="8" class="form-control" placeholder="SKS 1 - 8">
-			</div>
-		</div>
-	</div>
-										
+
 		<div class="row mb-1">
-		  <div class="col-6">
-			<div class="input-group">
-			  <input id="mk10_sm01" type="text" pattern="[ABCDEabcde]" title="A/B/C/D/E" maxlength="1" class="form-control" placeholder="Indeks Nilai">
+			<div class="col-4">
+				<div class="input-group">
+					<input type="text" id="nm10-sm01" class="form-control" placeholder="Nama Mata Kuliah">
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="input-group">
+					<input id="nl10-sm01" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+						title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="input-group">
+					<input id="sk10-sm01" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+					</div>
+				</div>
 			</div>
 		</div>
-			<div class="col-6">
-			  <div class="input-group">
-				<input id="sk10_sm01" type="number" min="1" max="8" class="form-control" placeholder="SKS 1 - 8">
-			</div>
+
+	<div class="card-footer bg-secondary text-white">
+		<center><h6 id="ips-sm01">Indeks Prestasi Semester 1 : 0.00</h6> <h6 id="sks-sm01">Jumlah SKS Semester 1 : 0</h6></center>
 		</div>
 	</div>
-</div>
-									
-	<div class="card-footer bg-light">
-	  <center><h6 id="ips_sm01">IPS : 0.00</h6> <h6 id="sks_sm01">Total SKS : 0</h6></center>
-	  </div>
-  </div>
 </div>
 
 <!-- Semester 2-->
-	
-							
-						</div>
-	
-	
 
-						
+	<div class="col-lg-6 col-sm-12">
+		<div class="card" style="border:0">
+		  <div class="card-header bg-light text-black">
+			<center><h5>Semester 2</h5></center>
+	</div>
+							
+	<div class="card-body bg-dark">
+		<div class="row mb-1">
+			<div class="col-4">
+				<div class="input-group">
+					<input type="text" id="nm01-sm02" class="form-control" placeholder="Nama Mata Kuliah">
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="input-group">
+					<input id="nl01-sm02" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+						title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+					</div>
+				</div>
+			<div class="col-4">
+				<div class="input-group">
+					<input id="sk01-sm02" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+					</div>
+				</div>
+			</div>
+
+			<div class="row mb-1">
+				<div class="col-4">
+					<div class="input-group">
+						<input type="text" id="nm02-sm02" class="form-control" placeholder="Nama Mata Kuliah">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="nl02-sm02" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+							title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="sk02-sm02" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+					</div>
+				</div>
+			</div>
+	
+			<div class="row mb-1">
+				<div class="col-4">
+					<div class="input-group">
+						<input type="text" id="nm03-sm02" class="form-control" placeholder="Nama Mata Kuliah">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="nl03-sm02" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+							title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="sk03-sm02" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+					</div>
+				</div>
+			</div>
+	
+			<div class="row mb-1">
+				<div class="col-4">
+					<div class="input-group">
+						<input type="text" id="nm04-sm02" class="form-control" placeholder="Nama Mata Kuliah">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="nl04-sm02" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+							title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="sk04-sm02" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+					</div>
+				</div>
+			</div>
+	
+			<div class="row mb-1">
+				<div class="col-4">
+					<div class="input-group">
+						<input type="text" id="nm05-sm02" class="form-control" placeholder="Nama Mata Kuliah">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="nl05-sm02" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+							title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="sk05-sm02" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+					</div>
+				</div>
+			</div>
+	
+			<div class="row mb-1">
+				<div class="col-4">
+					<div class="input-group">
+						<input type="text" id="nm06-sm02" class="form-control" placeholder="Nama Mata Kuliah">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="nl06-sm02" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+							title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="sk06-sm02" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+					</div>
+				</div>
+			</div>
+			
+			<div class="row mb-1">
+				<div class="col-4">
+					<div class="input-group">
+						<input type="text" id="nm07-sm02" class="form-control" placeholder="Nama Mata Kuliah">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="nl07-sm02" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+							title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="sk07-sm02" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+					</div>
+				</div>
+			</div>
+	
+			<div class="row mb-1">
+				<div class="col-4">
+					<div class="input-group">
+						<input type="text" id="nm08-sm02" class="form-control" placeholder="Nama Mata Kuliah">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="nl08-sm02" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+							title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="sk08-sm02" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+					</div>
+				</div>
+			</div>
+	
+			<div class="row mb-1">
+				<div class="col-4">
+					<div class="input-group">
+						<input type="text" id="nm09-sm02" class="form-control" placeholder="Nama Mata Kuliah">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="nl09-sm02" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+							title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="sk09-sm02" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+					</div>
+				</div>
+			</div>
+	
+			<div class="row mb-1">
+				<div class="col-4">
+					<div class="input-group">
+						<input type="text" id="nm10-sm02" class="form-control" placeholder="Nama Mata Kuliah">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="nl10-sm02" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+							title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="sk10-sm02" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+						</div>
+					</div>
+				</div>
+			</div>
+	
+		<div class="card-footer bg-white text-black">
+			<center><h6 id="ips-sm02">Indeks Prestasi Semester 2 : 0.00</h6> <h6 id="sks-sm02">Jumlah SKS Semester 2: 0</h6></center>
+			</div>
+		</div>
+	</div>
+
+<!-- Semester 3-->
+
+	<div class="col-lg-6 col-sm-12">
+		<div class="card" style="border:0">
+		  <div class="card-header bg-secondary text-white">
+			<center><h5>Semester 3</h5></center>
+	</div>
+							
+	<div class="card-body bg-dark">
+		<div class="row mb-1">
+			<div class="col-4">
+				<div class="input-group">
+					<input type="text" id="nm01-sm03" class="form-control" placeholder="Nama Mata Kuliah">
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="input-group">
+					<input id="nl01-sm03" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+						title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+					</div>
+				</div>
+			<div class="col-4">
+				<div class="input-group">
+					<input id="sk01-sm03" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+					</div>
+				</div>
+			</div>
+
+			<div class="row mb-1">
+				<div class="col-4">
+					<div class="input-group">
+						<input type="text" id="nm02-sm03" class="form-control" placeholder="Nama Mata Kuliah">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="nl02-sm03" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+							title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="sk02-sm03" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+					</div>
+				</div>
+			</div>
+	
+			<div class="row mb-1">
+				<div class="col-4">
+					<div class="input-group">
+						<input type="text" id="nm03-sm03" class="form-control" placeholder="Nama Mata Kuliah">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="nl03-sm03" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+							title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="sk03-sm03" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+					</div>
+				</div>
+			</div>
+	
+			<div class="row mb-1">
+				<div class="col-4">
+					<div class="input-group">
+						<input type="text" id="nm04-sm03" class="form-control" placeholder="Nama Mata Kuliah">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="nl04-sm03" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+							title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="sk04-sm03" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+					</div>
+				</div>
+			</div>
+	
+			<div class="row mb-1">
+				<div class="col-4">
+					<div class="input-group">
+						<input type="text" id="nm05-sm03" class="form-control" placeholder="Nama Mata Kuliah">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="nl05-sm03" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+							title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="sk05-sm03" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+					</div>
+				</div>
+			</div>
+	
+			<div class="row mb-1">
+				<div class="col-4">
+					<div class="input-group">
+						<input type="text" id="nm06-sm03" class="form-control" placeholder="Nama Mata Kuliah">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="nl06-sm03" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+							title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="sk06-sm03" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+					</div>
+				</div>
+			</div>
+			
+			<div class="row mb-1">
+				<div class="col-4">
+					<div class="input-group">
+						<input type="text" id="nm07-sm03" class="form-control" placeholder="Nama Mata Kuliah">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="nl07-sm03" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+							title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="sk07-sm03" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+					</div>
+				</div>
+			</div>
+	
+			<div class="row mb-1">
+				<div class="col-4">
+					<div class="input-group">
+						<input type="text" id="nm08-sm03" class="form-control" placeholder="Nama Mata Kuliah">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="nl08-sm03" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+							title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="sk08-sm03" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+					</div>
+				</div>
+			</div>
+	
+			<div class="row mb-1">
+				<div class="col-4">
+					<div class="input-group">
+						<input type="text" id="nm09-sm03" class="form-control" placeholder="Nama Mata Kuliah">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="nl09-sm03" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+							title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="sk09-sm03" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+					</div>
+				</div>
+			</div>
+	
+			<div class="row mb-1">
+				<div class="col-4">
+					<div class="input-group">
+						<input type="text" id="nm10-sm03" class="form-control" placeholder="Nama Mata Kuliah">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="nl10-sm03" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+							title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="sk10-sm03" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+						</div>
+					</div>
+				</div>
+			</div>
+	
+		<div class="card-footer bg-secondary text-white">
+			<center><h6 id="ips-sm03">Indeks Prestasi Semester 3 : 0.00</h6> <h6 id="sks-sm03">Jumlah SKS Semester 3: 0</h6></center>
+			</div>
+		</div>
+	</div>
+
+<!-- Semester 4-->
+
+	<div class="col-lg-6 col-sm-12">
+		<div class="card" style="border:0">
+		  <div class="card-header bg-white text-black">
+			<center><h5>Semester 4</h5></center>
+	</div>
+							
+	<div class="card-body bg-dark">
+		<div class="row mb-1">
+			<div class="col-4">
+				<div class="input-group">
+					<input type="text" id="nm01-sm04" class="form-control" placeholder="Nama Mata Kuliah">
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="input-group">
+					<input id="nl01-sm04" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+						title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+					</div>
+				</div>
+			<div class="col-4">
+				<div class="input-group">
+					<input id="sk01-sm04" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+					</div>
+				</div>
+			</div>
+
+			<div class="row mb-1">
+				<div class="col-4">
+					<div class="input-group">
+						<input type="text" id="nm02-sm04" class="form-control" placeholder="Nama Mata Kuliah">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="nl02-sm04" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+							title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="sk02-sm04" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+					</div>
+				</div>
+			</div>
+	
+			<div class="row mb-1">
+				<div class="col-4">
+					<div class="input-group">
+						<input type="text" id="nm03-sm04" class="form-control" placeholder="Nama Mata Kuliah">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="nl03-sm04" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+							title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="sk03-sm04" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+					</div>
+				</div>
+			</div>
+	
+			<div class="row mb-1">
+				<div class="col-4">
+					<div class="input-group">
+						<input type="text" id="nm04-sm04" class="form-control" placeholder="Nama Mata Kuliah">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="nl04-sm04" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+							title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="sk04-sm04" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+					</div>
+				</div>
+			</div>
+	
+			<div class="row mb-1">
+				<div class="col-4">
+					<div class="input-group">
+						<input type="text" id="nm05-sm04" class="form-control" placeholder="Nama Mata Kuliah">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="nl05-sm04" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+							title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="sk05-sm04" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+					</div>
+				</div>
+			</div>
+	
+			<div class="row mb-1">
+				<div class="col-4">
+					<div class="input-group">
+						<input type="text" id="nm06-sm04" class="form-control" placeholder="Nama Mata Kuliah">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="nl06-sm04" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+							title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="sk06-sm04" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+					</div>
+				</div>
+			</div>
+			
+			<div class="row mb-1">
+				<div class="col-4">
+					<div class="input-group">
+						<input type="text" id="nm07-sm04" class="form-control" placeholder="Nama Mata Kuliah">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="nl07-sm04" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+							title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="sk07-sm04" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+					</div>
+				</div>
+			</div>
+	
+			<div class="row mb-1">
+				<div class="col-4">
+					<div class="input-group">
+						<input type="text" id="nm08-sm04" class="form-control" placeholder="Nama Mata Kuliah">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="nl08-sm04" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+							title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="sk08-sm04" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+					</div>
+				</div>
+			</div>
+	
+			<div class="row mb-1">
+				<div class="col-4">
+					<div class="input-group">
+						<input type="text" id="nm09-sm04" class="form-control" placeholder="Nama Mata Kuliah">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="nl09-sm04" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+							title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="sk09-sm04" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+					</div>
+				</div>
+			</div>
+	
+			<div class="row mb-1">
+				<div class="col-4">
+					<div class="input-group">
+						<input type="text" id="nm10-sm04" class="form-control" placeholder="Nama Mata Kuliah">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="nl10-sm04" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+							title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="sk10-sm04" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+						</div>
+					</div>
+				</div>
+			</div>
+	
+		<div class="card-footer bg-light">
+			<center><h6 id="ips-sm04">Indeks Prestasi Semester 4 : 0.00</h6> <h6 id="sks-sm04">Jumlah SKS Semester 4: 0</h6></center>
+			</div>
+		</div>
+	</div>
+
+<!-- Semester 5-->
+
+	<div class="col-lg-6 col-sm-12">
+		<div class="card" style="border:0">
+		  <div class="card-header bg-secondary text-white">
+			<center><h5>Semester 5</h5></center>
+	</div>
+							
+	<div class="card-body bg-dark">
+		<div class="row mb-1">
+			<div class="col-4">
+				<div class="input-group">
+					<input type="text" id="nm01-sm05" class="form-control" placeholder="Nama Mata Kuliah">
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="input-group">
+					<input id="nl01-sm05" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+						title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+					</div>
+				</div>
+			<div class="col-4">
+				<div class="input-group">
+					<input id="sk01-sm05" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+					</div>
+				</div>
+			</div>
+
+			<div class="row mb-1">
+				<div class="col-4">
+					<div class="input-group">
+						<input type="text" id="nm02-sm05" class="form-control" placeholder="Nama Mata Kuliah">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="nl02-sm05" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+							title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="sk02-sm05" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+					</div>
+				</div>
+			</div>
+	
+			<div class="row mb-1">
+				<div class="col-4">
+					<div class="input-group">
+						<input type="text" id="nm03-sm05" class="form-control" placeholder="Nama Mata Kuliah">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="nl03-sm05" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+							title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="sk03-sm05" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+					</div>
+				</div>
+			</div>
+	
+			<div class="row mb-1">
+				<div class="col-4">
+					<div class="input-group">
+						<input type="text" id="nm04-sm05" class="form-control" placeholder="Nama Mata Kuliah">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="nl04-sm05" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+							title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="sk04-sm05" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+					</div>
+				</div>
+			</div>
+	
+			<div class="row mb-1">
+				<div class="col-4">
+					<div class="input-group">
+						<input type="text" id="nm05-sm05" class="form-control" placeholder="Nama Mata Kuliah">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="nl05-sm05" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+							title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="sk05-sm05" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+					</div>
+				</div>
+			</div>
+	
+			<div class="row mb-1">
+				<div class="col-4">
+					<div class="input-group">
+						<input type="text" id="nm06-sm05" class="form-control" placeholder="Nama Mata Kuliah">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="nl06-sm05" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+							title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="sk06-sm05" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+					</div>
+				</div>
+			</div>
+			
+			<div class="row mb-1">
+				<div class="col-4">
+					<div class="input-group">
+						<input type="text" id="nm07-sm05" class="form-control" placeholder="Nama Mata Kuliah">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="nl07-sm05" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+							title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="sk07-sm05" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+					</div>
+				</div>
+			</div>
+	
+			<div class="row mb-1">
+				<div class="col-4">
+					<div class="input-group">
+						<input type="text" id="nm08-sm05" class="form-control" placeholder="Nama Mata Kuliah">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="nl08-sm05" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+							title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="sk08-sm05" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+					</div>
+				</div>
+			</div>
+	
+			<div class="row mb-1">
+				<div class="col-4">
+					<div class="input-group">
+						<input type="text" id="nm09-sm05" class="form-control" placeholder="Nama Mata Kuliah">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="nl09-sm05" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+							title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="sk09-sm05" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+					</div>
+				</div>
+			</div>
+	
+			<div class="row mb-1">
+				<div class="col-4">
+					<div class="input-group">
+						<input type="text" id="nm10-sm05" class="form-control" placeholder="Nama Mata Kuliah">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="nl10-sm05" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+							title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="sk10-sm05" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+						</div>
+					</div>
+				</div>
+			</div>
+	
+		<div class="card-footer bg-secondary text-white">
+			<center><h6 id="ips-sm05">Indeks Prestasi Semester 5 : 0.00</h6> <h6 id="sks-sm05">Jumlah SKS Semester 5: 0</h6></center>
+			</div>
+		</div>
+	</div>
+	
+<!-- Semester 6-->
+
+		<div class="col-lg-6 col-sm-12">
+			<div class="card"style="border:0">
+			  <div class="card-header bg-white text-black">
+				<center><h5>Semester 6</h5></center>
+		</div>
+								
+		<div class="card-body bg-dark">
+			<div class="row mb-1">
+				<div class="col-4">
+					<div class="input-group">
+						<input type="text" id="nm01-sm06" class="form-control" placeholder="Nama Mata Kuliah">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="nl01-sm06" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+							title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+						</div>
+					</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="sk01-sm06" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+						</div>
+					</div>
+				</div>
+	
+				<div class="row mb-1">
+					<div class="col-4">
+						<div class="input-group">
+							<input type="text" id="nm02-sm06" class="form-control" placeholder="Nama Mata Kuliah">
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="input-group">
+							<input id="nl02-sm06" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+								title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="input-group">
+							<input id="sk02-sm06" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+						</div>
+					</div>
+				</div>
+		
+				<div class="row mb-1">
+					<div class="col-4">
+						<div class="input-group">
+							<input type="text" id="nm03-sm06" class="form-control" placeholder="Nama Mata Kuliah">
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="input-group">
+							<input id="nl03-sm06" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+								title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="input-group">
+							<input id="sk03-sm06" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+						</div>
+					</div>
+				</div>
+		
+				<div class="row mb-1">
+					<div class="col-4">
+						<div class="input-group">
+							<input type="text" id="nm04-sm06" class="form-control" placeholder="Nama Mata Kuliah">
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="input-group">
+							<input id="nl04-sm06" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+								title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="input-group">
+							<input id="sk04-sm06" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+						</div>
+					</div>
+				</div>
+		
+				<div class="row mb-1">
+					<div class="col-4">
+						<div class="input-group">
+							<input type="text" id="nm05-sm06" class="form-control" placeholder="Nama Mata Kuliah">
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="input-group">
+							<input id="nl05-sm06" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+								title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="input-group">
+							<input id="sk05-sm06" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+						</div>
+					</div>
+				</div>
+		
+				<div class="row mb-1">
+					<div class="col-4">
+						<div class="input-group">
+							<input type="text" id="nm06-sm06" class="form-control" placeholder="Nama Mata Kuliah">
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="input-group">
+							<input id="nl06-sm06" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+								title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="input-group">
+							<input id="sk06-sm06" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+						</div>
+					</div>
+				</div>
+				
+				<div class="row mb-1">
+					<div class="col-4">
+						<div class="input-group">
+							<input type="text" id="nm07-sm06" class="form-control" placeholder="Nama Mata Kuliah">
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="input-group">
+							<input id="nl07-sm06" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+								title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="input-group">
+							<input id="sk07-sm06" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+						</div>
+					</div>
+				</div>
+		
+				<div class="row mb-1">
+					<div class="col-4">
+						<div class="input-group">
+							<input type="text" id="nm08-sm06" class="form-control" placeholder="Nama Mata Kuliah">
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="input-group">
+							<input id="nl08-sm06" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+								title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="input-group">
+							<input id="sk08-sm06" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+						</div>
+					</div>
+				</div>
+		
+				<div class="row mb-1">
+					<div class="col-4">
+						<div class="input-group">
+							<input type="text" id="nm09-sm06" class="form-control" placeholder="Nama Mata Kuliah">
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="input-group">
+							<input id="nl09-sm06" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+								title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="input-group">
+							<input id="sk09-sm06" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+						</div>
+					</div>
+				</div>
+		
+				<div class="row mb-1">
+					<div class="col-4">
+						<div class="input-group">
+							<input type="text" id="nm10-sm06" class="form-control" placeholder="Nama Mata Kuliah">
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="input-group">
+							<input id="nl10-sm06" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+								title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="input-group">
+							<input id="sk10-sm06" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+							</div>
+						</div>
+					</div>
+				</div>
+		
+			<div class="card-footer bg-light">
+				<center><h6 id="ips-sm06">Indeks Prestasi Semester 6 : 0.00</h6> <h6 id="sks-sm06">Jumlah SKS Semester 6: 0</h6></center>
+				</div>
+			</div>
+		</div>
+
+<!-- Semester 7-->
+
+		<div class="col-lg-6 col-sm-12">
+			<div class="card" style="border:0">
+			  <div class="card-header bg-secondary text-white">
+				<center><h5>Semester 7</h5></center>
+		</div>
+								
+		<div class="card-body bg-dark">
+			<div class="row mb-1">
+				<div class="col-4">
+					<div class="input-group">
+						<input type="text" id="nm01-sm07" class="form-control" placeholder="Nama Mata Kuliah">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="nl01-sm07" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+							title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+						</div>
+					</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="sk01-sm07" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+						</div>
+					</div>
+				</div>
+	
+				<div class="row mb-1">
+					<div class="col-4">
+						<div class="input-group">
+							<input type="text" id="nm02-sm07" class="form-control" placeholder="Nama Mata Kuliah">
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="input-group">
+							<input id="nl02-sm07" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+								title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="input-group">
+							<input id="sk02-sm07" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+						</div>
+					</div>
+				</div>
+		
+				<div class="row mb-1">
+					<div class="col-4">
+						<div class="input-group">
+							<input type="text" id="nm03-sm07" class="form-control" placeholder="Nama Mata Kuliah">
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="input-group">
+							<input id="nl03-sm07" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+								title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="input-group">
+							<input id="sk03-sm07" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+						</div>
+					</div>
+				</div>
+		
+				<div class="row mb-1">
+					<div class="col-4">
+						<div class="input-group">
+							<input type="text" id="nm04-sm07" class="form-control" placeholder="Nama Mata Kuliah">
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="input-group">
+							<input id="nl04-sm07" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+								title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="input-group">
+							<input id="sk04-sm07" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+						</div>
+					</div>
+				</div>
+		
+				<div class="row mb-1">
+					<div class="col-4">
+						<div class="input-group">
+							<input type="text" id="nm05-sm07" class="form-control" placeholder="Nama Mata Kuliah">
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="input-group">
+							<input id="nl05-sm07" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+								title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="input-group">
+							<input id="sk05-sm07" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+						</div>
+					</div>
+				</div>
+		
+				<div class="row mb-1">
+					<div class="col-4">
+						<div class="input-group">
+							<input type="text" id="nm06-sm07" class="form-control" placeholder="Nama Mata Kuliah">
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="input-group">
+							<input id="nl06-sm07" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+								title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="input-group">
+							<input id="sk06-sm07" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+						</div>
+					</div>
+				</div>
+				
+				<div class="row mb-1">
+					<div class="col-4">
+						<div class="input-group">
+							<input type="text" id="nm07-sm07" class="form-control" placeholder="Nama Mata Kuliah">
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="input-group">
+							<input id="nl07-sm07" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+								title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="input-group">
+							<input id="sk07-sm07" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+						</div>
+					</div>
+				</div>
+		
+				<div class="row mb-1">
+					<div class="col-4">
+						<div class="input-group">
+							<input type="text" id="nm08-sm07" class="form-control" placeholder="Nama Mata Kuliah">
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="input-group">
+							<input id="nl08-sm07" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+								title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="input-group">
+							<input id="sk08-sm07" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+						</div>
+					</div>
+				</div>
+		
+				<div class="row mb-1">
+					<div class="col-4">
+						<div class="input-group">
+							<input type="text" id="nm09-sm07" class="form-control" placeholder="Nama Mata Kuliah">
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="input-group">
+							<input id="nl09-sm07" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+								title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="input-group">
+							<input id="sk09-sm07" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+						</div>
+					</div>
+				</div>
+		
+				<div class="row mb-1">
+					<div class="col-4">
+						<div class="input-group">
+							<input type="text" id="nm10-sm07" class="form-control" placeholder="Nama Mata Kuliah">
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="input-group">
+							<input id="nl10-sm07" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+								title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="input-group">
+							<input id="sk10-sm07" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+							</div>
+						</div>
+					</div>
+				</div>
+		
+			<div class="card-footer bg-secondary text-white">
+				<center><h6 id="ips-sm07">Indeks Prestasi Semester 7 : 0.00</h6> <h6 id="sks-sm07">Jumlah SKS Semester 7: 0</h6></center>
+				</div>
+			</div>
+		</div>
+	
+<!-- Semester 8-->
+
+	<div class="col-lg-6 col-sm-12">
+		<div class="card" style="border:0">
+		  <div class="card-header bg-white text-black">
+			<center><h5>Semester 8</h5></center>
+	</div>
+							
+	<div class="card-body bg-dark">
+		<div class="row mb-1">
+			<div class="col-4">
+				<div class="input-group">
+					<input type="text" id="nm01-sm08" class="form-control" placeholder="Nama Mata Kuliah">
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="input-group">
+					<input id="nl01-sm08" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+						title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+					</div>
+				</div>
+			<div class="col-4">
+				<div class="input-group">
+					<input id="sk01-sm08" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+					</div>
+				</div>
+			</div>
+
+			<div class="row mb-1">
+				<div class="col-4">
+					<div class="input-group">
+						<input type="text" id="nm02-sm08" class="form-control" placeholder="Nama Mata Kuliah">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="nl02-sm08" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+							title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="sk02-sm08" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+					</div>
+				</div>
+			</div>
+	
+			<div class="row mb-1">
+				<div class="col-4">
+					<div class="input-group">
+						<input type="text" id="nm03-sm08" class="form-control" placeholder="Nama Mata Kuliah">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="nl03-sm08" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+							title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="sk03-sm08" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+					</div>
+				</div>
+			</div>
+	
+			<div class="row mb-1">
+				<div class="col-4">
+					<div class="input-group">
+						<input type="text" id="nm04-sm08" class="form-control" placeholder="Nama Mata Kuliah">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="nl04-sm08" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+							title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="sk04-sm08" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+					</div>
+				</div>
+			</div>
+	
+			<div class="row mb-1">
+				<div class="col-4">
+					<div class="input-group">
+						<input type="text" id="nm05-sm08" class="form-control" placeholder="Nama Mata Kuliah">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="nl05-sm08" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+							title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="sk05-sm08" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+					</div>
+				</div>
+			</div>
+	
+			<div class="row mb-1">
+				<div class="col-4">
+					<div class="input-group">
+						<input type="text" id="nm06-sm08" class="form-control" placeholder="Nama Mata Kuliah">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="nl06-sm08" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+							title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="sk06-sm08" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+					</div>
+				</div>
+			</div>
+			
+			<div class="row mb-1">
+				<div class="col-4">
+					<div class="input-group">
+						<input type="text" id="nm07-sm08" class="form-control" placeholder="Nama Mata Kuliah">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="nl07-sm08" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+							title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="sk07-sm08" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+					</div>
+				</div>
+			</div>
+	
+			<div class="row mb-1">
+				<div class="col-4">
+					<div class="input-group">
+						<input type="text" id="nm08-sm08" class="form-control" placeholder="Nama Mata Kuliah">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="nl08-sm08" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+							title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="sk08-sm08" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+					</div>
+				</div>
+			</div>
+	
+			<div class="row mb-1">
+				<div class="col-4">
+					<div class="input-group">
+						<input type="text" id="nm09-sm08" class="form-control" placeholder="Nama Mata Kuliah">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="nl09-sm08" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+							title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="sk09-sm08" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+					</div>
+				</div>
+			</div>
+	
+			<div class="row mb-1">
+				<div class="col-4">
+					<div class="input-group">
+						<input type="text" id="nm10-sm08" class="form-control" placeholder="Nama Mata Kuliah">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="nl10-sm08" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+							title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="sk10-sm08" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+						</div>
+					</div>
+				</div>
+			</div>
+	
+		<div class="card-footer bg-light">
+			<center><h6 id="ips-sm08">Indeks Prestasi Semester 8 : 0.00</h6> <h6 id="sks-sm08">Jumlah SKS Semester 8: 0</h6></center>
+			</div>
+		</div>
+	</div>
+	
+<!-- Semester 9-->
+
+	<div class="col-lg-6 col-sm-12">
+		<div class="card" style="border:0">
+		  <div class="card-header bg-secondary text-white">
+			<center><h5>Semester 9</h5></center>
+	</div>
+							
+	<div class="card-body bg-dark">
+		<div class="row mb-1">
+			<div class="col-4">
+				<div class="input-group">
+					<input type="text" id="nm01-sm09" class="form-control" placeholder="Nama Mata Kuliah">
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="input-group">
+					<input id="nl01-sm09" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+						title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+					</div>
+				</div>
+			<div class="col-4">
+				<div class="input-group">
+					<input id="sk01-sm09" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+					</div>
+				</div>
+			</div>
+
+			<div class="row mb-1">
+				<div class="col-4">
+					<div class="input-group">
+						<input type="text" id="nm02-sm09" class="form-control" placeholder="Nama Mata Kuliah">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="nl02-sm09" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+							title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="sk02-sm09" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+					</div>
+				</div>
+			</div>
+	
+			<div class="row mb-1">
+				<div class="col-4">
+					<div class="input-group">
+						<input type="text" id="nm03-sm09" class="form-control" placeholder="Nama Mata Kuliah">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="nl03-sm09" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+							title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="sk03-sm09" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+					</div>
+				</div>
+			</div>
+	
+			<div class="row mb-1">
+				<div class="col-4">
+					<div class="input-group">
+						<input type="text" id="nm04-sm09" class="form-control" placeholder="Nama Mata Kuliah">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="nl04-sm09" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+							title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="sk04-sm09" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+					</div>
+				</div>
+			</div>
+	
+			<div class="row mb-1">
+				<div class="col-4">
+					<div class="input-group">
+						<input type="text" id="nm05-sm09" class="form-control" placeholder="Nama Mata Kuliah">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="nl05-sm09" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+							title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="sk05-sm09" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+					</div>
+				</div>
+			</div>
+	
+			<div class="row mb-1">
+				<div class="col-4">
+					<div class="input-group">
+						<input type="text" id="nm06-sm09" class="form-control" placeholder="Nama Mata Kuliah">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="nl06-sm09" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+							title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="sk06-sm09" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+					</div>
+				</div>
+			</div>
+			
+			<div class="row mb-1">
+				<div class="col-4">
+					<div class="input-group">
+						<input type="text" id="nm07-sm09" class="form-control" placeholder="Nama Mata Kuliah">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="nl07-sm09" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+							title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="sk07-sm09" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+					</div>
+				</div>
+			</div>
+	
+			<div class="row mb-1">
+				<div class="col-4">
+					<div class="input-group">
+						<input type="text" id="nm08-sm09" class="form-control" placeholder="Nama Mata Kuliah">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="nl08-sm09" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+							title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="sk08-sm09" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+					</div>
+				</div>
+			</div>
+	
+			<div class="row mb-1">
+				<div class="col-4">
+					<div class="input-group">
+						<input type="text" id="nm09-sm09" class="form-control" placeholder="Nama Mata Kuliah">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="nl09-sm09" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+							title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="sk09-sm09" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+					</div>
+				</div>
+			</div>
+	
+			<div class="row mb-1">
+				<div class="col-4">
+					<div class="input-group">
+						<input type="text" id="nm10-sm09" class="form-control" placeholder="Nama Mata Kuliah">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="nl10-sm09" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+							title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="sk10-sm09" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+						</div>
+					</div>
+				</div>
+			</div>
+	
+		<div class="card-footer bg-secondary text-white">
+			<center><h6 id="ips-sm09">Indeks Prestasi Semester 9 : 0.00</h6> <h6 id="sks-sm09">Jumlah SKS Semester 9: 0</h6></center>
+			</div>
+		</div>
+	</div>
+	
+<!-- Semester 10-->
+
+	<div class="col-lg-6 col-sm-12">
+		<div class="card"style="border:0">
+		  <div class="card-header bg-white text-black">
+			<center><h5>Semester 10</h5></center>
+	</div>
+							
+	<div class="card-body bg-dark">
+		<div class="row mb-1">
+			<div class="col-4">
+				<div class="input-group">
+					<input type="text" id="nm01-sm10" class="form-control" placeholder="Nama Mata Kuliah">
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="input-group">
+					<input id="nl01-sm10" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+						title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+					</div>
+				</div>
+			<div class="col-4">
+				<div class="input-group">
+					<input id="sk01-sm10" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+					</div>
+				</div>
+			</div>
+
+			<div class="row mb-1">
+				<div class="col-4">
+					<div class="input-group">
+						<input type="text" id="nm02-sm10" class="form-control" placeholder="Nama Mata Kuliah">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="nl02-sm10" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+							title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="sk02-sm10" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+					</div>
+				</div>
+			</div>
+	
+			<div class="row mb-1">
+				<div class="col-4">
+					<div class="input-group">
+						<input type="text" id="nm03-sm10" class="form-control" placeholder="Nama Mata Kuliah">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="nl03-sm10" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+							title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="sk03-sm10" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+					</div>
+				</div>
+			</div>
+	
+			<div class="row mb-1">
+				<div class="col-4">
+					<div class="input-group">
+						<input type="text" id="nm04-sm10" class="form-control" placeholder="Nama Mata Kuliah">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="nl04-sm10" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+							title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="sk04-sm10" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+					</div>
+				</div>
+			</div>
+	
+			<div class="row mb-1">
+				<div class="col-4">
+					<div class="input-group">
+						<input type="text" id="nm05-sm10" class="form-control" placeholder="Nama Mata Kuliah">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="nl05-sm10" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+							title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="sk05-sm10" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+					</div>
+				</div>
+			</div>
+	
+			<div class="row mb-1">
+				<div class="col-4">
+					<div class="input-group">
+						<input type="text" id="nm06-sm10" class="form-control" placeholder="Nama Mata Kuliah">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="nl06-sm10" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+							title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="sk06-sm10" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+					</div>
+				</div>
+			</div>
+			
+			<div class="row mb-1">
+				<div class="col-4">
+					<div class="input-group">
+						<input type="text" id="nm07-sm10" class="form-control" placeholder="Nama Mata Kuliah">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="nl07-sm10" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+							title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="sk07-sm10" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+					</div>
+				</div>
+			</div>
+	
+			<div class="row mb-1">
+				<div class="col-4">
+					<div class="input-group">
+						<input type="text" id="nm08-sm10" class="form-control" placeholder="Nama Mata Kuliah">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="nl08-sm10" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+							title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="sk08-sm10" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+					</div>
+				</div>
+			</div>
+	
+			<div class="row mb-1">
+				<div class="col-4">
+					<div class="input-group">
+						<input type="text" id="nm09-sm10" class="form-control" placeholder="Nama Mata Kuliah">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="nl09-sm10" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+							title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="sk09-sm10" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+					</div>
+				</div>
+			</div>
+	
+			<div class="row mb-1">
+				<div class="col-4">
+					<div class="input-group">
+						<input type="text" id="nm10-sm10" class="form-control" placeholder="Nama Mata Kuliah">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="nl10-sm10" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+							title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+						<input id="sk10-sm10" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+						</div>
+					</div>
+				</div>
+			</div>
+	
+		<div class="card-footer bg-light">
+			<center><h6 id="ips-sm09">Indeks Prestasi Semester 10 : 0.00</h6> <h6 id="sks-sm10">Jumlah SKS Semester 10 : 0</h6></center>
+			</div>
+		</div>
+	</div>	
