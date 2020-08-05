@@ -1,29 +1,177 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Cumulative GPA Calculator</title>
-    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <title>Cumulative GPA Calculator</title>
+  <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 </head>
-<body>
-	<div class="container mt-2">
-		<form action="javascript:hitung()">
-			<div class="card mb-3">
-				<div class="card-header bg-dark text-white">
-					<center><h3>GPA (IPK) Calculator</h3></center>
-				</div>
 
-				<div class="card-body">
-					<div class="row mb-2">
-						<div class="col-md-12 col-lg-12 text-center">
-							<p class="text-secondary">Kalkulator ini dapat digunakan untuk menghitung Indeks Prestasi Kumulatif (IPK)<br>
-							Standar bobot nilai yang digunakan adalah sebagai berikut:<br>
-						A = 4,00, A- = 3,70, B+ = 3,3, B = 3,00, B- = 2,70, C+ = 2,50, C = 2,00, C- = 1,50, D = 1,00, E = 0,0</p>
-						</div>
-					</div>
-					</div>
-					<div class="row mb-4">
-						<div class="col-lg-6 col-sm-12">
+<body>
+  <div class="container-fluid mw-100 mh-100 bg-dark"style="border:0;margin-bottom:-200px;padding-bottom:200px;">
+	<form action="javascript:hitung()">
+	  <div class="card mb-3 mw-100 mh-100 bg-dark" style="border:0">
+		<div class="card mt-3 mw-100 mh-100 text-white bg-dark" style="border:0">
+		  <center><h3>GPA (IPK) Calculator</h3></center>
+		</div>
+
+  <div class="card-body mw-100 mh-100 text-danger bg-dark" style="border:0">
+	<div class="row mb-2 mw-100 mh-100"style="border:0">
+	  <div class="col-md-12 col-lg-12 text-center">
+		<p class="text-secondary text-light	">Kalkulator ini dapat digunakan untuk menghitung Indeks Prestasi Kumulatif (IPK)<br>
+		  Standar bobot nilai yang digunakan adalah sebagai berikut:<br>
+		    A = 4,00, A- = 3,70, B+ = 3,3, B = 3,00, B- = 2,70, C+ = 2,50, C = 2,00, C- = 1,50, D = 1,00, E = 0,0</p>
+		  </div>
+	   </div>
+	</div>
+
+	<div class="row mb-4">
+	  <div class="col-lg-6 col-sm-12">
+		<div class="card">
+		  <div class="card-header bg-secondary text-white">
+			<center><h5>Semester 1</h5></center>
+		</div>
+									
+	<div class="card-body">
+	  <div class="row mb-1">
+		<div class="col-6">
+		  <div class="input-group">
+			<input id="mk01_sm01" type="text" pattern="[ABCDEabcde]" title="A/B/C/D/E" maxlength="1" class="form-control" placeholder="Indeks Nilai">
+		</div>
+	</div>
+		<div class="col-6">
+		  <div class="input-group">
+			<input id="sk01_sm01" type="number" min="1" max="8" class="form-control" placeholder="SKS 1 - 8">
+			</div>
+		</div>
+	</div>
+
+		<div class="row mb-1">
+		  <div class="col-6">
+			<div class="input-group">
+			  <input id="mk02_sm01" type="text" pattern="[ABCDEabcde]" title="A/B/C/D/E" maxlength="1" class="form-control" placeholder="Indeks Nilai">
+			</div>
+		</div>
+		  <div class="col-6">
+			<div class="input-group">
+			  <input id="sk02_sm01" type="number" min="1" max="8" class="form-control" placeholder="SKS 1 - 8">
+			</div>
+		</div>
+	</div>
+										
+		<div class="row mb-1">
+		  <div class="col-6">
+			<div class="input-group">
+			  <input id="mk03_sm01" type="text" pattern="[ABCDEabcde]" title="A/B/C/D/E" maxlength="1" class="form-control" placeholder="Indeks Nilai">
+			</div>
+		</div>
+		  <div class="col-6">
+			<div class="input-group">
+			  <input id="sk03_sm01" type="number" min="1" max="8" class="form-control" placeholder="SKS 1 - 8">
+			</div>
+		</div>
+	</div>
+										
+		<div class="row mb-1">
+		  <div class="col-6">
+			<div class="input-group">
+			  <input id="mk04_sm01" type="text" pattern="[ABCDEabcde]" title="A/B/C/D/E" maxlength="1" class="form-control" placeholder="Indeks Nilai">
+			</div>
+		</div>
+		  <div class="col-6">
+			<div class="input-group">
+			  <input id="sk04_sm01" type="number" min="1" max="8" class="form-control" placeholder="SKS 1 - 8">
+			</div>
+		</div>
+	</div>
+
+		<div class="row mb-1">
+		  <div class="col-6">
+			<div class="input-group">
+			  <input id="mk05_sm01" type="text" pattern="[ABCDEabcde]" title="A/B/C/D/E" maxlength="1" class="form-control" placeholder="Indeks Nilai">
+			</div>
+		</div>
+		  <div class="col-6">
+		    <div class="input-group">
+			  <input id="sk05_sm01" type="number" min="1" max="8" class="form-control" placeholder="SKS 1 - 8">
+			</div>
+		</div>
+	</div>
+										
+		<div class="row mb-1">
+		  <div class="col-6">
+			<div class="input-group">
+			  <input id="mk06_sm01" type="text" pattern="[ABCDEabcde]" title="A/B/C/D/E" maxlength="1" class="form-control" placeholder="Indeks Nilai">
+			</div>
+		</div>
+		  <div class="col-6">
+			<div class="input-group">
+			  <input id="sk06_sm01" type="number" min="1" max="8" class="form-control" placeholder="SKS 1 - 8">
+			</div>
+		</div>
+	</div>
+		
+		<div class="row mb-1">
+		  <div class="col-6">
+			<div class="input-group">
+			  <input id="mk07_sm01" type="text" pattern="[ABCDEabcde]" title="A/B/C/D/E" maxlength="1" class="form-control" placeholder="Indeks Nilai">
+			</div>
+		</div>
+		  <div class="col-6">
+			<div class="input-group">
+			  <input id="sk07_sm01" type="number" min="1" max="8" class="form-control" placeholder="SKS 1 - 8">
+			</div>
+		</div>
+	</div>
+						
+		<div class="row mb-1">
+		  <div class="col-6">
+			<div class="input-group">
+			  <input id="mk08_sm01" type="text" pattern="[ABCDEabcde]" title="A/B/C/D/E" maxlength="1" class="form-control" placeholder="Indeks Nilai">
+			</div>
+		</div>
+		  <div class="col-6">
+			<div class="input-group">
+			  <input id="sk08_sm01" type="number" min="1" max="8" class="form-control" placeholder="SKS 1 - 8">
+			</div>
+		</div>
+	</div>
+										
+		<div class="row mb-1">
+		  <div class="col-6">
+			<div class="input-group">
+			  <input id="mk09_sm01" type="text" pattern="[ABCDEabcde]" title="A/B/C/D/E" maxlength="1" class="form-control" placeholder="Indeks Nilai">
+			</div>
+		</div>
+		  <div class="col-6">
+			<div class="input-group">
+			  <input id="sk09_sm01" type="number" min="1" max="8" class="form-control" placeholder="SKS 1 - 8">
+			</div>
+		</div>
+	</div>
+										
+		<div class="row mb-1">
+		  <div class="col-6">
+			<div class="input-group">
+			  <input id="mk10_sm01" type="text" pattern="[ABCDEabcde]" title="A/B/C/D/E" maxlength="1" class="form-control" placeholder="Indeks Nilai">
+			</div>
+		</div>
+			<div class="col-6">
+			  <div class="input-group">
+				<input id="sk10_sm01" type="number" min="1" max="8" class="form-control" placeholder="SKS 1 - 8">
+			</div>
+		</div>
+	</div>
+</div>
+									
+	<div class="card-footer bg-light">
+	  <center><h6 id="ips_sm01">IPS : 0.00</h6> <h6 id="sks_sm01">Total SKS : 0</h6></center>
+	  </div>
+  </div>
+</div>
+
+<!-- Semester 2-->
 	
+							
+						</div>
 	
 	
 
