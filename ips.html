@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cumulative GPA Calculator</title>
+  <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container-fluid mw-100 mh-100 bg-dark" style="border:0;margin-bottom:-1000px;padding-bottom:1000px;">
+	<form action="javascript:hitung()">
+	  <div class="card mb-3 mw-100 mh-100 bg-dark" style="border:0">
+		<div class="card mt-3 mw-100 mh-100 text-white bg-dark" style="border:0">
+		  <center><h3>Semester GPA (IPS) Calculator</h3></center>
+		</div>
+
+  <div class="card-body mw-100 mh-100 text-black bg-dark" style="border:0">
+	<div class="row mb-2 mw-100 mh-100" style="border:0">
+	  <div class="col-md-12 col-lg-12 text-center">
+		<p class="text-secondary text-light	">Kalkulator ini dapat digunakan untuk menghitung Indeks Prestasi Semester (IPS)<br>
+		  Standar bobot indeks nilai yang digunakan adalah sebagai berikut:<br>
+			A = 4,00; A- = 3,70; B+ = 3,3; B = 3,00; B- = 2,70; C+ = 2,50; C = 2,00; C- = 1,50; D = 1,00; E = 0,0<br><br>
+			Silahkan masukkan Indeks Nilai dalam huruf kapital beserta tanda (+) dan (-) jika ada (contoh: A; B+; C-)</p>
+		  </div>
+       </div>
+
+       <!-- Semester 1-->
+
+	<div class="row mb-4">
+		<div class="col-lg-6 col-sm-12">
+			<div class="card" style="border:0">
+		  		<div class="card-header bg-secondary text-white">
+					<center><h5>Indeks Prestasi Semester</h5></center>
+	</div>
+									
+		
+	<div class="card-body bg-dark">
+		<div class="row mb-1">
+			<div class="col-4">
+				<div class="input-group">
+					<input type="text" id="nm01_sm01" class="form-control" placeholder="Nama Mata Kuliah">
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="input-group">
+					<input id="nl01_sm01" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+						title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="input-group">
+					<input id="sk01_sm01" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+				</div>
+			</div>
+		</div>
+
+		<div class="row mb-1">
+			<div class="col-4">
+				<div class="input-group">
+					<input type="text" id="nm02_sm01" class="form-control" placeholder="Nama Mata Kuliah">
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="input-group">
+					<input id="nl02_sm01" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+						title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="input-group">
+					<input id="sk02_sm01" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+				</div>
+			</div>
+		</div>
+
+		<div class="row mb-1">
+			<div class="col-4">
+				<div class="input-group">
+					<input type="text" id="nm03_sm01" class="form-control" placeholder="Nama Mata Kuliah">
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="input-group">
+					<input id="nl03_sm01" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+						title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="input-group">
+					<input id="sk03_sm01" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+				</div>
+			</div>
+		</div>
+
+		<div class="row mb-1">
+			<div class="col-4">
+				<div class="input-group">
+					<input type="text" id="nm04_sm01" class="form-control" placeholder="Nama Mata Kuliah">
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="input-group">
+					<input id="nl04_sm01" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+						title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="input-group">
+					<input id="sk04_sm01" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+				</div>
+			</div>
+		</div>
+
+		<div class="row mb-1">
+			<div class="col-4">
+				<div class="input-group">
+					<input type="text" id="nm05_sm01" class="form-control" placeholder="Nama Mata Kuliah">
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="input-group">
+					<input id="nl05_sm01" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+						title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="input-group">
+					<input id="sk05_sm01" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+				</div>
+			</div>
+		</div>
+
+		<div class="row mb-1">
+			<div class="col-4">
+				<div class="input-group">
+					<input type="text" id="nm06_sm01" class="form-control" placeholder="Nama Mata Kuliah">
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="input-group">
+					<input id="nl06_sm01" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+						title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="input-group">
+					<input id="sk06_sm01" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+				</div>
+			</div>
+		</div>
+		
+		<div class="row mb-1">
+			<div class="col-4">
+				<div class="input-group">
+					<input type="text" id="nm07_sm01" class="form-control" placeholder="Nama Mata Kuliah">
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="input-group">
+					<input id="nl07_sm01" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+						title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="input-group">
+					<input id="sk07_sm01" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+				</div>
+			</div>
+		</div>
+
+		<div class="row mb-1">
+			<div class="col-4">
+				<div class="input-group">
+					<input type="text" id="nm08_sm01" class="form-control" placeholder="Nama Mata Kuliah">
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="input-group">
+					<input id="nl08_sm01" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+						title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="input-group">
+					<input id="sk08_sm01" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+				</div>
+			</div>
+		</div>
+
+		<div class="row mb-1">
+			<div class="col-4">
+				<div class="input-group">
+					<input type="text" id="nm09_sm01" class="form-control" placeholder="Nama Mata Kuliah">
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="input-group">
+					<input id="nl09_sm01" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+						title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="input-group">
+					<input id="sk09_sm01" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+				</div>
+			</div>
+		</div>
+
+		<div class="row mb-1">
+			<div class="col-4">
+				<div class="input-group">
+					<input type="text" id="nm10_sm01" class="form-control" placeholder="Nama Mata Kuliah">
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="input-group">
+					<input id="nl10_sm01" type="text" pattern="(A|B|C|D|E|A-|B[+]|B-|C[+]|C-|a|b|c|d|e|a-|b[+]|b-|c[+]|c-)"
+						title="A/B/C/D/E" maxlength="2" class="form-control" placeholder="Indeks Nilai">
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="input-group">
+					<input id="sk10_sm01" type="number" min="1" max="9" class="form-control" placeholder="Beban SKS">
+					</div>
+				</div>
+			</div>
+		</div>
+       
+	<div class="card-footer bg-secondary text-white">
+		<center><h6 id="ips_sm01">Indeks Prestasi Semester : 0.00</h6> <h6 id="sks_sm01">Jumlah SKS Ditempuh     : 0</h6></center>
+		</div>
+	</div>
+
+<div class="row mt-4 text-center">
+    <div class="col-sm-12 text-center"></div></div>
+        <center><button class="btn btn-lg btn-block btn-primary" style="width:400px"; type="submit">Hitung Indeks Prestasi Semester</button></center>
+    </div>
+
+</div>
+</div>
+</div>
+</form>
+</div>
+
+<script type="text/javascript">
+
+	// Returns character-based index to its equivalent integer form
+	function index (val){
+		if (val == "A") {
+					return 4;
+				}	else if (val == "A-") {
+						return 3.7
+				}	else if (val == "B+") {
+						return 3.3
+				}	else if (val == "B") {
+						return 3
+				}	else if (val == "B-") {
+						return 2.7
+				}	else if (val == "C+") {
+						return 2.5
+				}	else if (val == "C") {
+						return 2
+				}	else if (val == "C-") {
+						return 1.5
+				}	else if (val == "D") {
+						return 1
+				}	else if (val == "E") {
+						return 0
+				}	else if (val == "a") {
+						return 4
+				}	else if (val == "a-") {
+						return 3.7
+				}	else if (val== "b+") {
+						return 3.3
+				}	else if (val == "b") {
+						return 3
+				}	else if (val == "b-") {
+						return 2.7
+				}	else if (val == "c") {
+						return 2
+				}	else if (val == "d") {
+						return 1
+				}	else if (val == "e") {
+						return 0
+				}	else {
+						return null;
+				}
+			}
+		
+		
+	// memeriksa bahwa hasil penghitungan angka atau bukan
+	function nan(nilai){
+			if (Number.isNaN(nilai)) {
+				return '0.00';
+			} else {
+				return nilai.toFixed(2).toString();
+			}
+		}
+
+		// memeriksa bahwa hasil penghitungan angka atau bukan
+		function angka_nan(nilai){
+			if (Number.isNaN(nilai)) {
+				return '0';
+			} else {
+				return nilai;
+			}
+		}	
+
+
+	// Array to store total grade points and total credits taken
+	function hitung(){ 
+		var all = [];
+		var nilai = [];
+		var total_nilai = 0;
+		var total_sks = 0;
+
+	
+
+	// Semester 1
+	
+		var sm01 = [];
+		var nl01_sm01 = index(document.getElementById("nl01_sm01").value);
+		var nl02_sm01 = index(document.getElementById("nl02_sm01").value);
+		var nl03_sm01 = index(document.getElementById("nl03_sm01").value);
+		var nl04_sm01 = index(document.getElementById("nl04_sm01").value);
+		var nl05_sm01 = index(document.getElementById("nl05_sm01").value);
+		var nl06_sm01 = index(document.getElementById("nl06_sm01").value);
+		var nl07_sm01 = index(document.getElementById("nl07_sm01").value);
+		var nl08_sm01 = index(document.getElementById("nl08_sm01").value);
+		var nl09_sm01 = index(document.getElementById("nl09_sm01").value);
+		var nl10_sm01 = index(document.getElementById("nl10_sm01").value);
+
+		var sk01_sm01 = parseInt(document.getElementById("sk01_sm01").value);
+		var sk02_sm01 = parseInt(document.getElementById("sk02_sm01").value);
+		var sk03_sm01 = parseInt(document.getElementById("sk03_sm01").value);
+		var sk04_sm01 = parseInt(document.getElementById("sk04_sm01").value);
+		var sk05_sm01 = parseInt(document.getElementById("sk05_sm01").value);
+		var sk06_sm01 = parseInt(document.getElementById("sk06_sm01").value);
+		var sk07_sm01 = parseInt(document.getElementById("sk07_sm01").value);
+		var sk08_sm01 = parseInt(document.getElementById("sk08_sm01").value);
+		var sk09_sm01 = parseInt(document.getElementById("sk09_sm01").value);
+		var sk10_sm01 = parseInt(document.getElementById("sk10_sm01").value);
+			
+			if (nl01_sm01 != null){ sm01.push([nl01_sm01, sk01_sm01]); }
+			if (nl02_sm01 != null){ sm01.push([nl02_sm01, sk02_sm01]); }
+			if (nl03_sm01 != null){ sm01.push([nl03_sm01, sk03_sm01]); }
+			if (nl04_sm01 != null){ sm01.push([nl04_sm01, sk04_sm01]); }
+			if (nl05_sm01 != null){ sm01.push([nl05_sm01, sk05_sm01]); }
+			if (nl06_sm01 != null){ sm01.push([nl06_sm01, sk06_sm01]); }
+			if (nl07_sm01 != null){ sm01.push([nl07_sm01, sk07_sm01]); }
+			if (nl08_sm01 != null){ sm01.push([nl08_sm01, sk08_sm01]); }
+			if (nl09_sm01 != null){ sm01.push([nl09_sm01, sk09_sm01]); }
+			if (nl10_sm01 != null){ sm01.push([nl10_sm01, sk10_sm01]); }
+
+			if (sm01.length > 0) { nilai.push(sm01); }
+
+			var jml_sks_sm01 = 0;
+			var total_nilai_sm01 = 0;
+
+			for (var a = 0; a < sm01.length; a++) {
+				jml_sks_sm01 += sm01[a][1];
+
+				var temp = sm01[a][0] * sm01[a][1];
+				total_nilai_sm01 += temp;
+			}
+
+			total_nilai += total_nilai_sm01;
+			total_sks += jml_sks_sm01;
+			var ips_sm01 = total_nilai_sm01 / jml_sks_sm01;
+
+	
+// Penghitungan akhir
+var ipk = total_nilai / total_sks;
+
+// Rubah tampilan nilai
+document.getElementById("ips_sm01").innerHTML = "Indeks Prestasi Semester : " + nan(ips_sm01);
+
+
+document.getElementById("sks_sm01").innerHTML = "Jumlah SKS Ditempuh : " + angka_nan(jml_sks_sm01);
+
+
+
+
+	}
+	
+</script>
+
+</body>
+</html>
