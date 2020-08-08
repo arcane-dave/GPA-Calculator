@@ -7,7 +7,7 @@
 
 <body>
   <div class="container-fluid mw-100 mh-100 bg-dark" style="border:0;margin-bottom:-200px;padding-bottom:200px;">
-	<form action="javascript:hitung()">
+	<form action="javascript:count()">
 	  <div class="card mb-3 mw-100 mh-100 bg-dark" style="border:0">
 		<div class="card mt-3 mw-100 mh-100 text-white bg-dark" style="border:0">
 		  <center><h3>GPA (IPK) Calculator</h3></center>
@@ -17,9 +17,10 @@
 	<div class="row mb-2 mw-100 mh-100" style="border:0">
 	  <div class="col-md-12 col-lg-12 text-center">
 		<p class="text-secondary text-light	">Kalkulator ini dapat digunakan untuk menghitung Indeks Prestasi Kumulatif (IPK)<br>
-		  Standar bobot indeks nilai yang digunakan adalah sebagai berikut:<br>
+		  Standar bobot Indeks Nilai yang digunakan adalah sebagai berikut:<br>
 			A = 4,00; A- = 3,70; B+ = 3,3; B = 3,00; B- = 2,70; C+ = 2,50; C = 2,00; C- = 1,50; D = 1,00; E = 0,0<br><br>
-			Silahkan masukkan Indeks Nilai dalam huruf kapital beserta tanda (+) dan (-) jika ada (contoh: A; B+; C-)</p>
+			Silahkan masukkan Indeks Nilai dalam huruf kapital beserta tanda (+) dan (-) jika ada (contoh: A; B+; C-)<br>
+			Tidak diharuskan mengisi penuh sampai dengan Semester 10, cukup kosongkan apabila terdapat kolom yang tidak perlu</p>
 		  </div>
 	   </div>
 	
@@ -2088,13 +2089,14 @@
 	
 	<div class="row mt-4 text-center">
 		<div class="col-sm-12 text-center"></div></div>
-			<center><button class="btn btn-lg btn-block btn-primary" style="width:400px"; type="submit">Hitung Indeks Prestasi Kumulatif</button></center>
+			<center><button class="btn btn-lg btn-block btn-primary" style="width:400px"; 
+				type="submit">Hitung Indeks Prestasi Kumulatif</button></center>
 		</div>
 	
 	</div>
 </div>
 <div class="card-footer bg-secondary text-white">
-	<center><h3 id="ipk">Jumlah Nilai Kumulatif : 0<br>Jumlah SKS Ditempuh : 0<br>Indeks Prestasi Kumulatif : 0.00</h3></center>
+	<center><h4 id="ipk">Jumlah Nilai Kumulatif : 0<br>Jumlah SKS Ditempuh : 0<br><br>Indeks Prestasi Kumulatif : 0.00</h4></center>
 </div>
 </div>
 </form>
@@ -2102,7 +2104,7 @@
 
 <script type="text/javascript">
 
-	// Returns character-based index to its equivalent integer form
+	// Converts character-based grade index to its equivalent integer form
 	function index (val){
 		if (val == "A") {
 					return 4;
@@ -2146,37 +2148,33 @@
 			}
 		
 		
-	// memeriksa bahwa hasil penghitungan angka atau bukan
-	function nan(nilai){
-			if (Number.isNaN(nilai)) {
+	// Check whether parsed semester GPA value is a number or not
+	function semesterCheck(grade){
+			if (Number.isNaN(grade)) {
 				return '0.00';
 			} else {
-				return nilai.toFixed(2).toString();
+				return grade.toFixed(2).toString();
 			}
 		}
 
-		// memeriksa bahwa hasil penghitungan angka atau bukan
-		function angka_nan(nilai){
-			if (Number.isNaN(nilai)) {
+	// Check whether parsed credit value is a number or not
+	function creditCheck(grade){
+			if (Number.isNaN(grade)) {
 				return '0';
 			} else {
-				return nilai;
+				return grade;
 			}
 		}	
 
-
 	// Array to store total grade points and total credits taken
-	function hitung(){ 
-		var all = [];
-		var nilai = [];
-		var total_nilai = 0;
-		var total_sks = 0;
-
-	
+	function count(){ 
+		var grade = [];
+		var totalGrade = 0;
+		var totalCredit = 0;
 
 	// Semester 1
-	
 		var sm01 = [];
+
 		var nl01_sm01 = index(document.getElementById("nl01_sm01").value);
 		var nl02_sm01 = index(document.getElementById("nl02_sm01").value);
 		var nl03_sm01 = index(document.getElementById("nl03_sm01").value);
@@ -2210,21 +2208,21 @@
 			if (nl09_sm01 != null){ sm01.push([nl09_sm01, sk09_sm01]); }
 			if (nl10_sm01 != null){ sm01.push([nl10_sm01, sk10_sm01]); }
 
-			if (sm01.length > 0) { nilai.push(sm01); }
+			if (sm01.length > 0) { grade.push(sm01); }
 
-			var jml_sks_sm01 = 0;
-			var total_nilai_sm01 = 0;
+		var totalCreditSm01 = 0;
+		var totalGradeSm01 = 0;
 
 			for (var a = 0; a < sm01.length; a++) {
-				jml_sks_sm01 += sm01[a][1];
-
+				totalCreditSm01 += sm01[a][1];
 				var temp = sm01[a][0] * sm01[a][1];
-				total_nilai_sm01 += temp;
-			}
+				totalGradeSm01 += temp;
+				}
 
-			total_nilai += total_nilai_sm01;
-			total_sks += jml_sks_sm01;
-			var ips_sm01 = total_nilai_sm01 / jml_sks_sm01;
+		totalGrade += totalGradeSm01;
+		totalCredit += totalCreditSm01;
+
+		var ips_sm01 = totalGradeSm01 / totalCreditSm01;
 
 	// Semester 2
 		var sm02 = [];
@@ -2262,469 +2260,468 @@
 			if (nl09_sm02 != null){ sm02.push([nl09_sm02, sk09_sm02]); }
 			if (nl10_sm02 != null){ sm02.push([nl10_sm02, sk10_sm02]); }
 
-			if (sm02.length > 0) { nilai.push(sm02); }
-
-	var jml_sks_sm02 = 0;
-	var total_nilai_sm02 = 0;
-
-	for (var a = 0; a < sm02.length; a++) {
-	jml_sks_sm02 += sm02[a][1];
-
-	var temp = sm02[a][0] * sm02[a][1];
-	total_nilai_sm02 += temp;
-	}
-
-total_nilai += total_nilai_sm02;
-total_sks += jml_sks_sm02;
-var ips_sm02 = total_nilai_sm02 / jml_sks_sm02;
-
-// Semester 3
-var sm03 = [];
-
-var nl01_sm03 = index(document.getElementById("nl01_sm03").valuee);
-var nl02_sm03 = index(document.getElementById("nl02_sm03").value);
-var nl03_sm03 = index(document.getElementById("nl03_sm03").valuee);
-var nl04_sm03 = index(document.getElementById("nl04_sm03").value);
-var nl05_sm03 = index(document.getElementById("nl05_sm03").value);
-var nl06_sm03 = index(document.getElementById("nl06_sm03").value);
-var nl07_sm03 = index(document.getElementById("nl07_sm03").value);
-var nl08_sm03 = index(document.getElementById("nl08_sm03").value);
-var nl09_sm03 = index(document.getElementById("nl09_sm03").value);
-var nl10_sm03 = index(document.getElementById("nl10_sm03").value);
-
-var sk01_sm03 = parseInt(document.getElementById("sk01_sm03").value);
-var sk02_sm03 = parseInt(document.getElementById("sk02_sm03").value);
-var sk03_sm03 = parseInt(document.getElementById("sk03_sm03").value);
-var sk04_sm03 = parseInt(document.getElementById("sk04_sm03").value);
-var sk05_sm03 = parseInt(document.getElementById("sk05_sm03").value);
-var sk06_sm03 = parseInt(document.getElementById("sk06_sm03").value);
-var sk07_sm03 = parseInt(document.getElementById("sk07_sm03").value);
-var sk08_sm03 = parseInt(document.getElementById("sk08_sm03").value);
-var sk09_sm03 = parseInt(document.getElementById("sk09_sm03").value);
-var sk10_sm03 = parseInt(document.getElementById("sk10_sm03").value);
-
-if (nl01_sm03 != null){ sm03.push([nl01_sm03, sk01_sm03]); }
-if (nl02_sm03 != null){ sm03.push([nl02_sm03, sk02_sm03]); }
-if (nl03_sm03 != null){ sm03.push([nl03_sm03, sk03_sm03]); }
-if (nl04_sm03 != null){ sm03.push([nl04_sm03, sk04_sm03]); }
-if (nl05_sm03 != null){ sm03.push([nl05_sm03, sk05_sm03]); }
-if (nl06_sm03 != null){ sm03.push([nl06_sm03, sk06_sm03]); }
-if (nl07_sm03 != null){ sm03.push([nl07_sm03, sk07_sm03]); }
-if (nl08_sm03 != null){ sm03.push([nl08_sm03, sk08_sm03]); }
-if (nl09_sm03 != null){ sm03.push([nl09_sm03, sk09_sm03]); }
-if (nl10_sm03 != null){ sm03.push([nl10_sm03, sk10_sm03]); }
-
-if (sm03.length > 0) { nilai.push(sm03); }
-
-var jml_sks_sm03 = 0;
-var total_nilai_sm03 = 0;
-
-for (var a = 0; a < sm03.length; a++) {
-	jml_sks_sm03 += sm03[a][1];
-
-	var temp = sm03[a][0] * sm03[a][1];
-	total_nilai_sm03 += temp;
-}
-
-total_nilai += total_nilai_sm03;
-total_sks += jml_sks_sm03;
-var ips_sm03 = total_nilai_sm03 / jml_sks_sm03;
-
-// nilai semester 04
-var sm04 = [];
-
-var nl01_sm04 = index(document.getElementById("nl01_sm04").value);
-var nl02_sm04 = index(document.getElementById("nl02_sm04").value);
-var nl03_sm04 = index(document.getElementById("nl03_sm04").value);
-var nl04_sm04 = index(document.getElementById("nl04_sm04").value);
-var nl05_sm04 = index(document.getElementById("nl05_sm04").value);
-var nl06_sm04 = index(document.getElementById("nl06_sm04").value);
-var nl07_sm04 = index(document.getElementById("nl07_sm04").value);
-var nl08_sm04 = index(document.getElementById("nl08_sm04").value);
-var nl09_sm04 = index(document.getElementById("nl09_sm04").value);
-var nl10_sm04 = index(document.getElementById("nl10_sm04").value);
-
-var sk01_sm04 = parseInt(document.getElementById("sk01_sm04").value);
-var sk02_sm04 = parseInt(document.getElementById("sk02_sm04").value);
-var sk03_sm04 = parseInt(document.getElementById("sk03_sm04").value);
-var sk04_sm04 = parseInt(document.getElementById("sk04_sm04").value);
-var sk05_sm04 = parseInt(document.getElementById("sk05_sm04").value);
-var sk06_sm04 = parseInt(document.getElementById("sk06_sm04").value);
-var sk07_sm04 = parseInt(document.getElementById("sk07_sm04").value);
-var sk08_sm04 = parseInt(document.getElementById("sk08_sm04").value);
-var sk09_sm04 = parseInt(document.getElementById("sk09_sm04").value);
-var sk10_sm04 = parseInt(document.getElementById("sk10_sm04").value);
-
-if (nl01_sm04 != null){ sm04.push([nl01_sm04, sk01_sm04]); }
-if (nl02_sm04 != null){ sm04.push([nl02_sm04, sk02_sm04]); }
-if (nl03_sm04 != null){ sm04.push([nl03_sm04, sk03_sm04]); }
-if (nl04_sm04 != null){ sm04.push([nl04_sm04, sk04_sm04]); }
-if (nl05_sm04 != null){ sm04.push([nl05_sm04, sk05_sm04]); }
-if (nl06_sm04 != null){ sm04.push([nl06_sm04, sk06_sm04]); }
-if (nl07_sm04 != null){ sm04.push([nl07_sm04, sk07_sm04]); }
-if (nl08_sm04 != null){ sm04.push([nl08_sm04, sk08_sm04]); }
-if (nl09_sm04 != null){ sm04.push([nl09_sm04, sk09_sm04]); }
-if (nl10_sm04 != null){ sm04.push([nl10_sm04, sk10_sm04]); }
-
-if (sm04.length > 0) { nilai.push(sm04); }
-
-var jml_sks_sm04 = 0;
-var total_nilai_sm04 = 0;
-
-for (var a = 0; a < sm04.length; a++) {
-	jml_sks_sm04 += sm04[a][1];
-
-	var temp = sm04[a][0] * sm04[a][1];
-	total_nilai_sm04 += temp;
-}
-
-total_nilai += total_nilai_sm04;
-total_sks += jml_sks_sm04;
-var ips_sm04 = total_nilai_sm04 / jml_sks_sm04;
-
-// nilai semester 05
-var sm05 = [];
-
-var nl01_sm05 = index(document.getElementById("nl01_sm05").value);
-var nl02_sm05 = index(document.getElementById("nl02_sm05").value);
-var nl03_sm05 = index(document.getElementById("nl03_sm05").value);
-var nl04_sm05 = index(document.getElementById("nl04_sm05").value);
-var nl05_sm05 = index(document.getElementById("nl05_sm05").value);
-var nl06_sm05 = index(document.getElementById("nl06_sm05").value);
-var nl07_sm05 = index(document.getElementById("nl07_sm05").value);
-var nl08_sm05 = index(document.getElementById("nl08_sm05").value);
-var nl09_sm05 = index(document.getElementById("nl09_sm05").value);
-var nl10_sm05 = index(document.getElementById("nl10_sm05").value);
-
-var sk01_sm05 = parseInt(document.getElementById("sk01_sm05").value);
-var sk02_sm05 = parseInt(document.getElementById("sk02_sm05").value);
-var sk03_sm05 = parseInt(document.getElementById("sk03_sm05").value);
-var sk04_sm05 = parseInt(document.getElementById("sk04_sm05").value);
-var sk05_sm05 = parseInt(document.getElementById("sk05_sm05").value);
-var sk06_sm05 = parseInt(document.getElementById("sk06_sm05").value);
-var sk07_sm05 = parseInt(document.getElementById("sk07_sm05").value);
-var sk08_sm05 = parseInt(document.getElementById("sk08_sm05").value);
-var sk09_sm05 = parseInt(document.getElementById("sk09_sm05").value);
-var sk10_sm05 = parseInt(document.getElementById("sk10_sm05").value);
-
-if (nl01_sm05 != null){ sm05.push([nl01_sm05, sk01_sm05]); }
-if (nl02_sm05 != null){ sm05.push([nl02_sm05, sk02_sm05]); }
-if (nl03_sm05 != null){ sm05.push([nl03_sm05, sk03_sm05]); }
-if (nl04_sm05 != null){ sm05.push([nl04_sm05, sk04_sm05]); }
-if (nl05_sm05 != null){ sm05.push([nl05_sm05, sk05_sm05]); }
-if (nl06_sm05 != null){ sm05.push([nl06_sm05, sk06_sm05]); }
-if (nl07_sm05 != null){ sm05.push([nl07_sm05, sk07_sm05]); }
-if (nl08_sm05 != null){ sm05.push([nl08_sm05, sk08_sm05]); }
-if (nl09_sm05 != null){ sm05.push([nl09_sm05, sk09_sm05]); }
-if (nl10_sm05 != null){ sm05.push([nl10_sm05, sk10_sm05]); }
-
-if (sm05.length > 0) { nilai.push(sm05); }
-
-var jml_sks_sm05 = 0;
-var total_nilai_sm05 = 0;
-
-for (var a = 0; a < sm05.length; a++) {
-	jml_sks_sm05 += sm05[a][1];
-
-	var temp = sm05[a][0] * sm05[a][1];
-	total_nilai_sm05 += temp;
-}
-
-total_nilai += total_nilai_sm05;
-total_sks += jml_sks_sm05;
-var ips_sm05 = total_nilai_sm05 / jml_sks_sm05;
-
-// nilai semester 06
-var sm06 = [];
-
-var nl01_sm06 = index(document.getElementById("nl01_sm06").value);
-var nl02_sm06 = index(document.getElementById("nl02_sm06").value);
-var nl03_sm06 = index(document.getElementById("nl03_sm06").value);
-var nl04_sm06 = index(document.getElementById("nl04_sm06").value);
-var nl05_sm06 = index(document.getElementById("nl05_sm06").value);
-var nl06_sm06 = index(document.getElementById("nl06_sm06").value);
-var nl07_sm06 = index(document.getElementById("nl07_sm06").value);
-var nl08_sm06 = index(document.getElementById("nl08_sm06").value);
-var nl09_sm06 = index(document.getElementById("nl09_sm06").value);
-var nl10_sm06 = index(document.getElementById("nl10_sm06").value);
-
-var sk01_sm06 = parseInt(document.getElementById("sk01_sm06").value);
-var sk02_sm06 = parseInt(document.getElementById("sk02_sm06").value);
-var sk03_sm06 = parseInt(document.getElementById("sk03_sm06").value);
-var sk04_sm06 = parseInt(document.getElementById("sk04_sm06").value);
-var sk05_sm06 = parseInt(document.getElementById("sk05_sm06").value);
-var sk06_sm06 = parseInt(document.getElementById("sk06_sm06").value);
-var sk07_sm06 = parseInt(document.getElementById("sk07_sm06").value);
-var sk08_sm06 = parseInt(document.getElementById("sk08_sm06").value);
-var sk09_sm06 = parseInt(document.getElementById("sk09_sm06").value);
-var sk10_sm06 = parseInt(document.getElementById("sk10_sm06").value);
-
-if (nl01_sm06 != null){ sm06.push([nl01_sm06, sk01_sm06]); }
-if (nl02_sm06 != null){ sm06.push([nl02_sm06, sk02_sm06]); }
-if (nl03_sm06 != null){ sm06.push([nl03_sm06, sk03_sm06]); }
-if (nl04_sm06 != null){ sm06.push([nl04_sm06, sk04_sm06]); }
-if (nl05_sm06 != null){ sm06.push([nl05_sm06, sk05_sm06]); }
-if (nl06_sm06 != null){ sm06.push([nl06_sm06, sk06_sm06]); }
-if (nl07_sm06 != null){ sm06.push([nl07_sm06, sk07_sm06]); }
-if (nl08_sm06 != null){ sm06.push([nl08_sm06, sk08_sm06]); }
-if (nl09_sm06 != null){ sm06.push([nl09_sm06, sk09_sm06]); }
-if (nl10_sm06 != null){ sm06.push([nl10_sm06, sk10_sm06]); }
-
-if (sm06.length > 0) { nilai.push(sm06); }
-
-var jml_sks_sm06 = 0;
-var total_nilai_sm06 = 0;
-
-for (var a = 0; a < sm06.length; a++) {
-	jml_sks_sm06 += sm06[a][1];
-
-	var temp = sm06[a][0] * sm06[a][1];
-	total_nilai_sm06 += temp;
-}
-
-total_nilai += total_nilai_sm06;
-total_sks += jml_sks_sm06;
-var ips_sm06 = total_nilai_sm06 / jml_sks_sm06;
-
-// nilai semester 07
-var sm07 = [];
-
-var nl01_sm07 = index(document.getElementById("nl01_sm07").value);
-var nl02_sm07 = index(document.getElementById("nl02_sm07").value);
-var nl03_sm07 = index(document.getElementById("nl03_sm07").value);
-var nl04_sm07 = index(document.getElementById("nl04_sm07").value);
-var nl05_sm07 = index(document.getElementById("nl05_sm07").value);
-var nl06_sm07 = index(document.getElementById("nl06_sm07").value);
-var nl07_sm07 = index(document.getElementById("nl07_sm07").value);
-var nl08_sm07 = index(document.getElementById("nl08_sm07").value);
-var nl09_sm07 = index(document.getElementById("nl09_sm07").value);
-var nl10_sm07 = index(document.getElementById("nl10_sm07").value);
-
-var sk01_sm07 = parseInt(document.getElementById("sk01_sm07").value);
-var sk02_sm07 = parseInt(document.getElementById("sk02_sm07").value);
-var sk03_sm07 = parseInt(document.getElementById("sk03_sm07").value);
-var sk04_sm07 = parseInt(document.getElementById("sk04_sm07").value);
-var sk05_sm07 = parseInt(document.getElementById("sk05_sm07").value);
-var sk06_sm07 = parseInt(document.getElementById("sk06_sm07").value);
-var sk07_sm07 = parseInt(document.getElementById("sk07_sm07").value);
-var sk08_sm07 = parseInt(document.getElementById("sk08_sm07").value);
-var sk09_sm07 = parseInt(document.getElementById("sk09_sm07").value);
-var sk10_sm07 = parseInt(document.getElementById("sk10_sm07").value);
-
-if (nl01_sm07 != null){ sm07.push([nl01_sm07, sk01_sm07]); }
-if (nl02_sm07 != null){ sm07.push([nl02_sm07, sk02_sm07]); }
-if (nl03_sm07 != null){ sm07.push([nl03_sm07, sk03_sm07]); }
-if (nl04_sm07 != null){ sm07.push([nl04_sm07, sk04_sm07]); }
-if (nl05_sm07 != null){ sm07.push([nl05_sm07, sk05_sm07]); }
-if (nl06_sm07 != null){ sm07.push([nl06_sm07, sk06_sm07]); }
-if (nl07_sm07 != null){ sm07.push([nl07_sm07, sk07_sm07]); }
-if (nl08_sm07 != null){ sm07.push([nl08_sm07, sk08_sm07]); }
-if (nl09_sm07 != null){ sm07.push([nl09_sm07, sk09_sm07]); }
-if (nl10_sm07 != null){ sm07.push([nl10_sm07, sk10_sm07]); }
-
-if (sm07.length > 0) { nilai.push(sm07); }
-
-var jml_sks_sm07 = 0;
-var total_nilai_sm07 = 0;
-
-for (var a = 0; a < sm07.length; a++) {
-	jml_sks_sm07 += sm07[a][1];
-
-	var temp = sm07[a][0] * sm07[a][1];
-	total_nilai_sm07 += temp;
-}
-
-total_nilai += total_nilai_sm07;
-total_sks += jml_sks_sm07;
-var ips_sm07 = total_nilai_sm07 / jml_sks_sm07;
-
-// nilai semester 08
-var sm08 = [];
-
-var nl01_sm08 = index(document.getElementById("nl01_sm08").value);
-var nl02_sm08 = index(document.getElementById("nl02_sm08").value);
-var nl03_sm08 = index(document.getElementById("nl03_sm08").value);
-var nl04_sm08 = index(document.getElementById("nl04_sm08").value);
-var nl05_sm08 = index(document.getElementById("nl05_sm08").value);
-var nl06_sm08 = index(document.getElementById("nl06_sm08").value);
-var nl07_sm08 = index(document.getElementById("nl07_sm08").value);
-var nl08_sm08 = index(document.getElementById("nl08_sm08").value);
-var nl09_sm08 = index(document.getElementById("nl09_sm08").value);
-var nl10_sm08 = index(document.getElementById("nl10_sm08").value);
-
-var sk01_sm08 = parseInt(document.getElementById("sk01_sm08").value);
-var sk02_sm08 = parseInt(document.getElementById("sk02_sm08").value);
-var sk03_sm08 = parseInt(document.getElementById("sk03_sm08").value);
-var sk04_sm08 = parseInt(document.getElementById("sk04_sm08").value);
-var sk05_sm08 = parseInt(document.getElementById("sk05_sm08").value);
-var sk06_sm08 = parseInt(document.getElementById("sk06_sm08").value);
-var sk07_sm08 = parseInt(document.getElementById("sk07_sm08").value);
-var sk08_sm08 = parseInt(document.getElementById("sk08_sm08").value);
-var sk09_sm08 = parseInt(document.getElementById("sk09_sm08").value);
-var sk10_sm08 = parseInt(document.getElementById("sk10_sm08").value);
-
-if (nl01_sm08 != null){ sm08.push([nl01_sm08, sk01_sm08]); }
-if (nl02_sm08 != null){ sm08.push([nl02_sm08, sk02_sm08]); }
-if (nl03_sm08 != null){ sm08.push([nl03_sm08, sk03_sm08]); }
-if (nl04_sm08 != null){ sm08.push([nl04_sm08, sk04_sm08]); }
-if (nl05_sm08 != null){ sm08.push([nl05_sm08, sk05_sm08]); }
-if (nl06_sm08 != null){ sm08.push([nl06_sm08, sk06_sm08]); }
-if (nl07_sm08 != null){ sm08.push([nl07_sm08, sk07_sm08]); }
-if (nl08_sm08 != null){ sm08.push([nl08_sm08, sk08_sm08]); }
-if (nl09_sm08 != null){ sm08.push([nl09_sm08, sk09_sm08]); }
-if (nl10_sm08 != null){ sm08.push([nl10_sm08, sk10_sm08]); }
-
-if (sm08.length > 0) { nilai.push(sm08); }
-
-var jml_sks_sm08 = 0;
-var total_nilai_sm08 = 0;
-
-for (var a = 0; a < sm08.length; a++) {
-	jml_sks_sm08 += sm08[a][1];
-
-	var temp = sm08[a][0] * sm08[a][1];
-	total_nilai_sm08 += temp;
-}
-
-total_nilai += total_nilai_sm08;
-total_sks += jml_sks_sm08;
-var ips_sm08 = total_nilai_sm08 / jml_sks_sm08;
-
-// nilai semester 09
-var sm09 = [];
-
-var nl01_sm09 = index(document.getElementById("nl01_sm09").value);
-var nl02_sm09 = index(document.getElementById("nl02_sm09").value);
-var nl03_sm09 = index(document.getElementById("nl03_sm09").value);
-var nl04_sm09 = index(document.getElementById("nl04_sm09").value);
-var nl05_sm09 = index(document.getElementById("nl05_sm09").value);
-var nl06_sm09 = index(document.getElementById("nl06_sm09").value);
-var nl07_sm09 = index(document.getElementById("nl07_sm09").value);
-var nl08_sm09 = index(document.getElementById("nl08_sm09").value);
-var nl09_sm09 = index(document.getElementById("nl09_sm09").value);
-var nl10_sm09 = index(document.getElementById("nl10_sm09").value);
-
-var sk01_sm09 = parseInt(document.getElementById("sk01_sm09").value);
-var sk02_sm09 = parseInt(document.getElementById("sk02_sm09").value);
-var sk03_sm09 = parseInt(document.getElementById("sk03_sm09").value);
-var sk04_sm09 = parseInt(document.getElementById("sk04_sm09").value);
-var sk05_sm09 = parseInt(document.getElementById("sk05_sm09").value);
-var sk06_sm09 = parseInt(document.getElementById("sk06_sm09").value);
-var sk07_sm09 = parseInt(document.getElementById("sk07_sm09").value);
-var sk08_sm09 = parseInt(document.getElementById("sk08_sm09").value);
-var sk09_sm09 = parseInt(document.getElementById("sk09_sm09").value);
-var sk10_sm09 = parseInt(document.getElementById("sk10_sm09").value);
-
-if (nl01_sm09 != null){ sm09.push([nl01_sm09, sk01_sm09]); }
-if (nl02_sm09 != null){ sm09.push([nl02_sm09, sk02_sm09]); }
-if (nl03_sm09 != null){ sm09.push([nl03_sm09, sk03_sm09]); }
-if (nl04_sm09 != null){ sm09.push([nl04_sm09, sk04_sm09]); }
-if (nl05_sm09 != null){ sm09.push([nl05_sm09, sk05_sm09]); }
-if (nl06_sm09 != null){ sm09.push([nl06_sm09, sk06_sm09]); }
-if (nl07_sm09 != null){ sm09.push([nl07_sm09, sk07_sm09]); }
-if (nl08_sm09 != null){ sm09.push([nl08_sm09, sk08_sm09]); }
-if (nl09_sm09 != null){ sm09.push([nl09_sm09, sk09_sm09]); }
-if (nl10_sm09 != null){ sm09.push([nl10_sm09, sk10_sm09]); }
-
-if (sm09.length > 0) { nilai.push(sm09); }
-
-var jml_sks_sm09 = 0;
-var total_nilai_sm09 = 0;
-
-for (var a = 0; a < sm09.length; a++) {
-	jml_sks_sm09 += sm09[a][1];
-
-	var temp = sm09[a][0] * sm09[a][1];
-	total_nilai_sm09 += temp;
-}
-
-total_nilai += total_nilai_sm09;
-total_sks += jml_sks_sm09;
-var ips_sm09 = total_nilai_sm09 / jml_sks_sm09;
-
-// nilai semester 10
-var sm10 = [];
-
-var nl01_sm10 = index(document.getElementById("nl01_sm10").value);
-var nl02_sm10 = index(document.getElementById("nl02_sm10").value);
-var nl03_sm10 = index(document.getElementById("nl03_sm10").value);
-var nl04_sm10 = index(document.getElementById("nl04_sm10").value);
-var nl05_sm10 = index(document.getElementById("nl05_sm10").value);
-var nl06_sm10 = index(document.getElementById("nl06_sm10").value);
-var nl07_sm10 = index(document.getElementById("nl07_sm10").value);
-var nl08_sm10 = index(document.getElementById("nl08_sm10").value);
-var nl09_sm10 = index(document.getElementById("nl09_sm10").value);
-var nl10_sm10 = index(document.getElementById("nl10_sm10").value);
-
-var sk01_sm10 = parseInt(document.getElementById("sk01_sm10").value);
-var sk02_sm10 = parseInt(document.getElementById("sk02_sm10").value);
-var sk03_sm10 = parseInt(document.getElementById("sk03_sm10").value);
-var sk04_sm10 = parseInt(document.getElementById("sk04_sm10").value);
-var sk05_sm10 = parseInt(document.getElementById("sk05_sm10").value);
-var sk06_sm10 = parseInt(document.getElementById("sk06_sm10").value);
-var sk07_sm10 = parseInt(document.getElementById("sk07_sm10").value);
-var sk08_sm10 = parseInt(document.getElementById("sk08_sm10").value);
-var sk09_sm10 = parseInt(document.getElementById("sk09_sm10").value);
-var sk10_sm10 = parseInt(document.getElementById("sk10_sm10").value);
-
-if (nl01_sm10 != null){ sm08.push([nl01_sm10, sk01_sm10]); }
-if (nl02_sm10 != null){ sm08.push([nl02_sm10, sk02_sm10]); }
-if (nl03_sm10 != null){ sm08.push([nl03_sm10, sk03_sm10]); }
-if (nl04_sm10 != null){ sm08.push([nl04_sm10, sk04_sm10]); }
-if (nl05_sm10 != null){ sm08.push([nl05_sm10, sk05_sm10]); }
-if (nl06_sm10 != null){ sm08.push([nl06_sm10, sk06_sm10]); }
-if (nl07_sm10 != null){ sm08.push([nl07_sm10, sk07_sm10]); }
-if (nl08_sm10 != null){ sm08.push([nl08_sm10, sk08_sm10]); }
-if (nl09_sm10 != null){ sm08.push([nl09_sm10, sk09_sm10]); }
-if (nl10_sm10 != null){ sm08.push([nl10_sm10, sk10_sm10]); }
-
-if (sm09.length > 0) { nilai.push(sm10); }
-
-var jml_sks_sm10 = 0;
-var total_nilai_sm10 = 0;
-
-for (var a = 0; a < sm10.length; a++) {
-	jml_sks_sm10 += sm10[a][1];
-
-	var temp = sm10[a][0] * sm10[a][1];
-	total_nilai_sm10 += temp;
-}
-
-total_nilai += total_nilai_sm10;
-total_sks += jml_sks_sm10;
-var ips_sm10 = total_nilai_sm10 / jml_sks_sm10;
-
-// Penghitungan akhir
-var ipk = total_nilai / total_sks;
-
-// Rubah tampilan nilai
-document.getElementById("ips_sm01").innerHTML = "IPS : " + nan(ips_sm01);
-document.getElementById("ips_sm02").innerHTML = "IPS : " + nan(ips_sm02);
-document.getElementById("ips_sm03").innerHTML = "IPS : " + nan(ips_sm03);
-document.getElementById("ips_sm04").innerHTML = "IPS : " + nan(ips_sm04);
-document.getElementById("ips_sm05").innerHTML = "IPS : " + nan(ips_sm05);
-document.getElementById("ips_sm06").innerHTML = "IPS : " + nan(ips_sm06);
-document.getElementById("ips_sm07").innerHTML = "IPS : " + nan(ips_sm07);
-document.getElementById("ips_sm08").innerHTML = "IPS : " + nan(ips_sm08);
-document.getElementById("ips_sm09").innerHTML = "IPS : " + nan(ips_sm09);
-document.getElementById("ips_sm10").innerHTML = "IPS : " + nan(ips_sm10);
-
-document.getElementById("sks_sm01").innerHTML = "Total SKS : " + angka_nan(jml_sks_sm01);
-document.getElementById("sks_sm02").innerHTML = "Total SKS : " + angka_nan(jml_sks_sm02);
-document.getElementById("sks_sm03").innerHTML = "Total SKS : " + angka_nan(jml_sks_sm03);
-document.getElementById("sks_sm04").innerHTML = "Total SKS : " + angka_nan(jml_sks_sm04);
-document.getElementById("sks_sm05").innerHTML = "Total SKS : " + angka_nan(jml_sks_sm05);
-document.getElementById("sks_sm06").innerHTML = "Total SKS : " + angka_nan(jml_sks_sm06);
-document.getElementById("sks_sm07").innerHTML = "Total SKS : " + angka_nan(jml_sks_sm07);
-document.getElementById("sks_sm08").innerHTML = "Total SKS : " + angka_nan(jml_sks_sm08);
-document.getElementById("sks_sm09").innerHTML = "Total SKS : " + angka_nan(jml_sks_sm09);
-document.getElementById("sks_sm10").innerHTML = "Total SKS : " + angka_nan(jml_sks_sm10);
-
-document.getElementById("ipk").innerHTML = "Jumlah Nilai Kumulatif : " + total_nilai.toFixed(2).toString() + " <br>Jumlah SKS Ditempuh: " + total_sks.toString() + " <br>Indeks Prestasi Kumulatif : " + nan(ipk);
-
-	}
+			if (sm02.length > 0) { grade.push(sm02); }
+
+		var totalCreditSm02 = 0;
+		var totalGradeSm02 = 0;
+
+		for (var a = 0; a < sm02.length; a++) {
+			totalCreditSm02 += sm02[a][1];
+			var temp = sm02[a][0] * sm02[a][1];
+			totalGradeSm02 += temp;
+			}
+
+		totalGrade += totalGradeSm02;
+		totalCredit += totalCreditSm02;
+		
+		var ips_sm02 = totalGradeSm02 / totalCreditSm02;
+
+	// Semester 3
+	var sm03 = [];
+
+	var nl01_sm03 = index(document.getElementById("nl01_sm03").value);
+	var nl02_sm03 = index(document.getElementById("nl02_sm03").value);
+	var nl03_sm03 = index(document.getElementById("nl03_sm03").value);
+	var nl04_sm03 = index(document.getElementById("nl04_sm03").value);
+	var nl05_sm03 = index(document.getElementById("nl05_sm03").value);
+	var nl06_sm03 = index(document.getElementById("nl06_sm03").value);
+	var nl07_sm03 = index(document.getElementById("nl07_sm03").value);
+	var nl08_sm03 = index(document.getElementById("nl08_sm03").value);
+	var nl09_sm03 = index(document.getElementById("nl09_sm03").value);
+	var nl10_sm03 = index(document.getElementById("nl10_sm03").value);
+
+	var sk01_sm03 = parseInt(document.getElementById("sk01_sm03").value);
+	var sk02_sm03 = parseInt(document.getElementById("sk02_sm03").value);
+	var sk03_sm03 = parseInt(document.getElementById("sk03_sm03").value);
+	var sk04_sm03 = parseInt(document.getElementById("sk04_sm03").value);
+	var sk05_sm03 = parseInt(document.getElementById("sk05_sm03").value);
+	var sk06_sm03 = parseInt(document.getElementById("sk06_sm03").value);
+	var sk07_sm03 = parseInt(document.getElementById("sk07_sm03").value);
+	var sk08_sm03 = parseInt(document.getElementById("sk08_sm03").value);
+	var sk09_sm03 = parseInt(document.getElementById("sk09_sm03").value);
+	var sk10_sm03 = parseInt(document.getElementById("sk10_sm03").value);
+
+		if (nl01_sm03 != null){ sm03.push([nl01_sm03, sk01_sm03]); }
+		if (nl02_sm03 != null){ sm03.push([nl02_sm03, sk02_sm03]); }
+		if (nl03_sm03 != null){ sm03.push([nl03_sm03, sk03_sm03]); }
+		if (nl04_sm03 != null){ sm03.push([nl04_sm03, sk04_sm03]); }
+		if (nl05_sm03 != null){ sm03.push([nl05_sm03, sk05_sm03]); }
+		if (nl06_sm03 != null){ sm03.push([nl06_sm03, sk06_sm03]); }
+		if (nl07_sm03 != null){ sm03.push([nl07_sm03, sk07_sm03]); }
+		if (nl08_sm03 != null){ sm03.push([nl08_sm03, sk08_sm03]); }
+		if (nl09_sm03 != null){ sm03.push([nl09_sm03, sk09_sm03]); }
+		if (nl10_sm03 != null){ sm03.push([nl10_sm03, sk10_sm03]); }
+
+		if (sm03.length > 0) { grade.push(sm03); }
+
+	var totalCreditSm03 = 0;
+	var totalGradeSm03 = 0;
+
+		for (var a = 0; a < sm03.length; a++) {
+			totalCreditSm03 += sm03[a][1];
+			var temp = sm03[a][0] * sm03[a][1];
+			totalGradeSm03 += temp;
+			}
+
+	totalGrade += totalGradeSm03;
+	totalCredit += totalCreditSm03;
+
+	var ips_sm03 = totalGradeSm03 / totalCreditSm03;
+
+	// Semester 4
+	var sm04 = [];
+
+	var nl01_sm04 = index(document.getElementById("nl01_sm04").value);
+	var nl02_sm04 = index(document.getElementById("nl02_sm04").value);
+	var nl03_sm04 = index(document.getElementById("nl03_sm04").value);
+	var nl04_sm04 = index(document.getElementById("nl04_sm04").value);
+	var nl05_sm04 = index(document.getElementById("nl05_sm04").value);
+	var nl06_sm04 = index(document.getElementById("nl06_sm04").value);
+	var nl07_sm04 = index(document.getElementById("nl07_sm04").value);
+	var nl08_sm04 = index(document.getElementById("nl08_sm04").value);
+	var nl09_sm04 = index(document.getElementById("nl09_sm04").value);
+	var nl10_sm04 = index(document.getElementById("nl10_sm04").value);
+
+	var sk01_sm04 = parseInt(document.getElementById("sk01_sm04").value);
+	var sk02_sm04 = parseInt(document.getElementById("sk02_sm04").value);
+	var sk03_sm04 = parseInt(document.getElementById("sk03_sm04").value);
+	var sk04_sm04 = parseInt(document.getElementById("sk04_sm04").value);
+	var sk05_sm04 = parseInt(document.getElementById("sk05_sm04").value);
+	var sk06_sm04 = parseInt(document.getElementById("sk06_sm04").value);
+	var sk07_sm04 = parseInt(document.getElementById("sk07_sm04").value);
+	var sk08_sm04 = parseInt(document.getElementById("sk08_sm04").value);
+	var sk09_sm04 = parseInt(document.getElementById("sk09_sm04").value);
+	var sk10_sm04 = parseInt(document.getElementById("sk10_sm04").value);
+
+		if (nl01_sm04 != null){ sm04.push([nl01_sm04, sk01_sm04]); }
+		if (nl02_sm04 != null){ sm04.push([nl02_sm04, sk02_sm04]); }
+		if (nl03_sm04 != null){ sm04.push([nl03_sm04, sk03_sm04]); }
+		if (nl04_sm04 != null){ sm04.push([nl04_sm04, sk04_sm04]); }
+		if (nl05_sm04 != null){ sm04.push([nl05_sm04, sk05_sm04]); }
+		if (nl06_sm04 != null){ sm04.push([nl06_sm04, sk06_sm04]); }
+		if (nl07_sm04 != null){ sm04.push([nl07_sm04, sk07_sm04]); }
+		if (nl08_sm04 != null){ sm04.push([nl08_sm04, sk08_sm04]); }
+		if (nl09_sm04 != null){ sm04.push([nl09_sm04, sk09_sm04]); }
+		if (nl10_sm04 != null){ sm04.push([nl10_sm04, sk10_sm04]); }
+
+		if (sm04.length > 0) { grade.push(sm04); }
+
+		var totalCreditSm04 = 0;
+		var totalGradeSm04 = 0;
+
+		for (var a = 0; a < sm04.length; a++) {
+			totalCreditSm04 += sm04[a][1];
+			var temp = sm04[a][0] * sm04[a][1];
+			totalGradeSm04 += temp;
+			}
+
+	totalGrade += totalGradeSm04;
+	totalCredit += totalCreditSm04;
+
+	var ips_sm04 = totalGradeSm04 / totalCreditSm04;
+
+	// Semester 5
+	var sm05 = [];
+
+	var nl01_sm05 = index(document.getElementById("nl01_sm05").value);
+	var nl02_sm05 = index(document.getElementById("nl02_sm05").value);
+	var nl03_sm05 = index(document.getElementById("nl03_sm05").value);
+	var nl04_sm05 = index(document.getElementById("nl04_sm05").value);
+	var nl05_sm05 = index(document.getElementById("nl05_sm05").value);
+	var nl06_sm05 = index(document.getElementById("nl06_sm05").value);
+	var nl07_sm05 = index(document.getElementById("nl07_sm05").value);
+	var nl08_sm05 = index(document.getElementById("nl08_sm05").value);
+	var nl09_sm05 = index(document.getElementById("nl09_sm05").value);
+	var nl10_sm05 = index(document.getElementById("nl10_sm05").value);
+
+	var sk01_sm05 = parseInt(document.getElementById("sk01_sm05").value);
+	var sk02_sm05 = parseInt(document.getElementById("sk02_sm05").value);
+	var sk03_sm05 = parseInt(document.getElementById("sk03_sm05").value);
+	var sk04_sm05 = parseInt(document.getElementById("sk04_sm05").value);
+	var sk05_sm05 = parseInt(document.getElementById("sk05_sm05").value);
+	var sk06_sm05 = parseInt(document.getElementById("sk06_sm05").value);
+	var sk07_sm05 = parseInt(document.getElementById("sk07_sm05").value);
+	var sk08_sm05 = parseInt(document.getElementById("sk08_sm05").value);
+	var sk09_sm05 = parseInt(document.getElementById("sk09_sm05").value);
+	var sk10_sm05 = parseInt(document.getElementById("sk10_sm05").value);
+
+		if (nl01_sm05 != null){ sm05.push([nl01_sm05, sk01_sm05]); }
+		if (nl02_sm05 != null){ sm05.push([nl02_sm05, sk02_sm05]); }
+		if (nl03_sm05 != null){ sm05.push([nl03_sm05, sk03_sm05]); }
+		if (nl04_sm05 != null){ sm05.push([nl04_sm05, sk04_sm05]); }
+		if (nl05_sm05 != null){ sm05.push([nl05_sm05, sk05_sm05]); }
+		if (nl06_sm05 != null){ sm05.push([nl06_sm05, sk06_sm05]); }
+		if (nl07_sm05 != null){ sm05.push([nl07_sm05, sk07_sm05]); }
+		if (nl08_sm05 != null){ sm05.push([nl08_sm05, sk08_sm05]); }
+		if (nl09_sm05 != null){ sm05.push([nl09_sm05, sk09_sm05]); }
+		if (nl10_sm05 != null){ sm05.push([nl10_sm05, sk10_sm05]); }
+
+		if (sm05.length > 0) { grade.push(sm05); }
+
+	var totalCreditSm05 = 0;
+	var totalGradeSm05 = 0;
+
+		for (var a = 0; a < sm05.length; a++) {
+			totalCreditSm05 += sm05[a][1];
+			var temp = sm05[a][0] * sm05[a][1];
+			totalGradeSm05 += temp;
+			}
+
+	totalGrade += totalGradeSm05;
+	totalCredit += totalCreditSm05;
+
+	var ips_sm05 = totalGradeSm05 / totalCreditSm05;
+
+	// Semester 6
+	var sm06 = [];
+
+	var nl01_sm06 = index(document.getElementById("nl01_sm06").value);
+	var nl02_sm06 = index(document.getElementById("nl02_sm06").value);
+	var nl03_sm06 = index(document.getElementById("nl03_sm06").value);
+	var nl04_sm06 = index(document.getElementById("nl04_sm06").value);
+	var nl05_sm06 = index(document.getElementById("nl05_sm06").value);
+	var nl06_sm06 = index(document.getElementById("nl06_sm06").value);
+	var nl07_sm06 = index(document.getElementById("nl07_sm06").value);
+	var nl08_sm06 = index(document.getElementById("nl08_sm06").value);
+	var nl09_sm06 = index(document.getElementById("nl09_sm06").value);
+	var nl10_sm06 = index(document.getElementById("nl10_sm06").value);
+
+	var sk01_sm06 = parseInt(document.getElementById("sk01_sm06").value);
+	var sk02_sm06 = parseInt(document.getElementById("sk02_sm06").value);
+	var sk03_sm06 = parseInt(document.getElementById("sk03_sm06").value);
+	var sk04_sm06 = parseInt(document.getElementById("sk04_sm06").value);
+	var sk05_sm06 = parseInt(document.getElementById("sk05_sm06").value);
+	var sk06_sm06 = parseInt(document.getElementById("sk06_sm06").value);
+	var sk07_sm06 = parseInt(document.getElementById("sk07_sm06").value);
+	var sk08_sm06 = parseInt(document.getElementById("sk08_sm06").value);
+	var sk09_sm06 = parseInt(document.getElementById("sk09_sm06").value);
+	var sk10_sm06 = parseInt(document.getElementById("sk10_sm06").value);
+
+		if (nl01_sm06 != null){ sm06.push([nl01_sm06, sk01_sm06]); }
+		if (nl02_sm06 != null){ sm06.push([nl02_sm06, sk02_sm06]); }
+		if (nl03_sm06 != null){ sm06.push([nl03_sm06, sk03_sm06]); }
+		if (nl04_sm06 != null){ sm06.push([nl04_sm06, sk04_sm06]); }
+		if (nl05_sm06 != null){ sm06.push([nl05_sm06, sk05_sm06]); }
+		if (nl06_sm06 != null){ sm06.push([nl06_sm06, sk06_sm06]); }
+		if (nl07_sm06 != null){ sm06.push([nl07_sm06, sk07_sm06]); }
+		if (nl08_sm06 != null){ sm06.push([nl08_sm06, sk08_sm06]); }
+		if (nl09_sm06 != null){ sm06.push([nl09_sm06, sk09_sm06]); }
+		if (nl10_sm06 != null){ sm06.push([nl10_sm06, sk10_sm06]); }
+
+		if (sm06.length > 0) { grade.push(sm06); }
+
+	var totalCreditSm06 = 0;
+	var totalGradeSm06 = 0;
+
+		for (var a = 0; a < sm06.length; a++) {
+			totalCreditSm06 += sm06[a][1];
+			var temp = sm06[a][0] * sm06[a][1];
+			totalGradeSm06 += temp;
+			}
+
+	totalGrade += totalGradeSm06;
+	totalCredit += totalCreditSm06;
 	
-</script>
+	var ips_sm06 = totalGradeSm06 / totalCreditSm06;
 
+	// Semester 7
+	var sm07 = [];
+
+	var nl01_sm07 = index(document.getElementById("nl01_sm07").value);
+	var nl02_sm07 = index(document.getElementById("nl02_sm07").value);
+	var nl03_sm07 = index(document.getElementById("nl03_sm07").value);
+	var nl04_sm07 = index(document.getElementById("nl04_sm07").value);
+	var nl05_sm07 = index(document.getElementById("nl05_sm07").value);
+	var nl06_sm07 = index(document.getElementById("nl06_sm07").value);
+	var nl07_sm07 = index(document.getElementById("nl07_sm07").value);
+	var nl08_sm07 = index(document.getElementById("nl08_sm07").value);
+	var nl09_sm07 = index(document.getElementById("nl09_sm07").value);
+	var nl10_sm07 = index(document.getElementById("nl10_sm07").value);
+
+	var sk01_sm07 = parseInt(document.getElementById("sk01_sm07").value);
+	var sk02_sm07 = parseInt(document.getElementById("sk02_sm07").value);
+	var sk03_sm07 = parseInt(document.getElementById("sk03_sm07").value);
+	var sk04_sm07 = parseInt(document.getElementById("sk04_sm07").value);
+	var sk05_sm07 = parseInt(document.getElementById("sk05_sm07").value);
+	var sk06_sm07 = parseInt(document.getElementById("sk06_sm07").value);
+	var sk07_sm07 = parseInt(document.getElementById("sk07_sm07").value);
+	var sk08_sm07 = parseInt(document.getElementById("sk08_sm07").value);
+	var sk09_sm07 = parseInt(document.getElementById("sk09_sm07").value);
+	var sk10_sm07 = parseInt(document.getElementById("sk10_sm07").value);
+
+		if (nl01_sm07 != null){ sm07.push([nl01_sm07, sk01_sm07]); }
+		if (nl02_sm07 != null){ sm07.push([nl02_sm07, sk02_sm07]); }
+		if (nl03_sm07 != null){ sm07.push([nl03_sm07, sk03_sm07]); }
+		if (nl04_sm07 != null){ sm07.push([nl04_sm07, sk04_sm07]); }
+		if (nl05_sm07 != null){ sm07.push([nl05_sm07, sk05_sm07]); }
+		if (nl06_sm07 != null){ sm07.push([nl06_sm07, sk06_sm07]); }
+		if (nl07_sm07 != null){ sm07.push([nl07_sm07, sk07_sm07]); }
+		if (nl08_sm07 != null){ sm07.push([nl08_sm07, sk08_sm07]); }
+		if (nl09_sm07 != null){ sm07.push([nl09_sm07, sk09_sm07]); }
+		if (nl10_sm07 != null){ sm07.push([nl10_sm07, sk10_sm07]); }
+
+		if (sm07.length > 0) { grade.push(sm07); }
+
+	var totalCreditSm07 = 0;
+	var totalGradeSm07 = 0;
+
+		for (var a = 0; a < sm07.length; a++) {
+			totalCreditSm07 += sm07[a][1];
+			var temp = sm07[a][0] * sm07[a][1];
+			totalGradeSm07 += temp;
+			}
+
+	totalGrade += totalGradeSm07;
+	totalCredit += totalCreditSm07;
+	
+	var ips_sm07 = totalGradeSm07 / totalCreditSm07;
+
+	// Semester 8
+	var sm08 = [];
+
+	var nl01_sm08 = index(document.getElementById("nl01_sm08").value);
+	var nl02_sm08 = index(document.getElementById("nl02_sm08").value);
+	var nl03_sm08 = index(document.getElementById("nl03_sm08").value);
+	var nl04_sm08 = index(document.getElementById("nl04_sm08").value);
+	var nl05_sm08 = index(document.getElementById("nl05_sm08").value);
+	var nl06_sm08 = index(document.getElementById("nl06_sm08").value);
+	var nl07_sm08 = index(document.getElementById("nl07_sm08").value);
+	var nl08_sm08 = index(document.getElementById("nl08_sm08").value);
+	var nl09_sm08 = index(document.getElementById("nl09_sm08").value);
+	var nl10_sm08 = index(document.getElementById("nl10_sm08").value);
+
+	var sk01_sm08 = parseInt(document.getElementById("sk01_sm08").value);
+	var sk02_sm08 = parseInt(document.getElementById("sk02_sm08").value);
+	var sk03_sm08 = parseInt(document.getElementById("sk03_sm08").value);
+	var sk04_sm08 = parseInt(document.getElementById("sk04_sm08").value);
+	var sk05_sm08 = parseInt(document.getElementById("sk05_sm08").value);
+	var sk06_sm08 = parseInt(document.getElementById("sk06_sm08").value);
+	var sk07_sm08 = parseInt(document.getElementById("sk07_sm08").value);
+	var sk08_sm08 = parseInt(document.getElementById("sk08_sm08").value);
+	var sk09_sm08 = parseInt(document.getElementById("sk09_sm08").value);
+	var sk10_sm08 = parseInt(document.getElementById("sk10_sm08").value);
+
+		if (nl01_sm08 != null){ sm08.push([nl01_sm08, sk01_sm08]); }
+		if (nl02_sm08 != null){ sm08.push([nl02_sm08, sk02_sm08]); }
+		if (nl03_sm08 != null){ sm08.push([nl03_sm08, sk03_sm08]); }
+		if (nl04_sm08 != null){ sm08.push([nl04_sm08, sk04_sm08]); }
+		if (nl05_sm08 != null){ sm08.push([nl05_sm08, sk05_sm08]); }
+		if (nl06_sm08 != null){ sm08.push([nl06_sm08, sk06_sm08]); }
+		if (nl07_sm08 != null){ sm08.push([nl07_sm08, sk07_sm08]); }
+		if (nl08_sm08 != null){ sm08.push([nl08_sm08, sk08_sm08]); }
+		if (nl09_sm08 != null){ sm08.push([nl09_sm08, sk09_sm08]); }
+		if (nl10_sm08 != null){ sm08.push([nl10_sm08, sk10_sm08]); }
+
+		if (sm08.length > 0) { grade.push(sm08); }
+
+	var totalCreditSm08 = 0;
+	var totalGradeSm08 = 0;
+
+		for (var a = 0; a < sm08.length; a++) {
+			totalCreditSm08 += sm08[a][1];
+			var temp = sm08[a][0] * sm08[a][1];
+			totalGradeSm08 += temp;
+			}
+
+	totalGrade += totalGradeSm08;
+	totalCredit += totalCreditSm08;
+	
+	var ips_sm08 = totalGradeSm08 / totalCreditSm08;
+
+	// Semester 9
+	var sm09 = [];
+
+	var nl01_sm09 = index(document.getElementById("nl01_sm09").value);
+	var nl02_sm09 = index(document.getElementById("nl02_sm09").value);
+	var nl03_sm09 = index(document.getElementById("nl03_sm09").value);
+	var nl04_sm09 = index(document.getElementById("nl04_sm09").value);
+	var nl05_sm09 = index(document.getElementById("nl05_sm09").value);
+	var nl06_sm09 = index(document.getElementById("nl06_sm09").value);
+	var nl07_sm09 = index(document.getElementById("nl07_sm09").value);
+	var nl08_sm09 = index(document.getElementById("nl08_sm09").value);
+	var nl09_sm09 = index(document.getElementById("nl09_sm09").value);
+	var nl10_sm09 = index(document.getElementById("nl10_sm09").value);
+
+	var sk01_sm09 = parseInt(document.getElementById("sk01_sm09").value);
+	var sk02_sm09 = parseInt(document.getElementById("sk02_sm09").value);
+	var sk03_sm09 = parseInt(document.getElementById("sk03_sm09").value);
+	var sk04_sm09 = parseInt(document.getElementById("sk04_sm09").value);
+	var sk05_sm09 = parseInt(document.getElementById("sk05_sm09").value);
+	var sk06_sm09 = parseInt(document.getElementById("sk06_sm09").value);
+	var sk07_sm09 = parseInt(document.getElementById("sk07_sm09").value);
+	var sk08_sm09 = parseInt(document.getElementById("sk08_sm09").value);
+	var sk09_sm09 = parseInt(document.getElementById("sk09_sm09").value);
+	var sk10_sm09 = parseInt(document.getElementById("sk10_sm09").value);
+
+		if (nl01_sm09 != null){ sm09.push([nl01_sm09, sk01_sm09]); }
+		if (nl02_sm09 != null){ sm09.push([nl02_sm09, sk02_sm09]); }
+		if (nl03_sm09 != null){ sm09.push([nl03_sm09, sk03_sm09]); }
+		if (nl04_sm09 != null){ sm09.push([nl04_sm09, sk04_sm09]); }
+		if (nl05_sm09 != null){ sm09.push([nl05_sm09, sk05_sm09]); }
+		if (nl06_sm09 != null){ sm09.push([nl06_sm09, sk06_sm09]); }
+		if (nl07_sm09 != null){ sm09.push([nl07_sm09, sk07_sm09]); }
+		if (nl08_sm09 != null){ sm09.push([nl08_sm09, sk08_sm09]); }
+		if (nl09_sm09 != null){ sm09.push([nl09_sm09, sk09_sm09]); }
+		if (nl10_sm09 != null){ sm09.push([nl10_sm09, sk10_sm09]); }
+
+		if (sm09.length > 0) { grade.push(sm09); }
+
+	var totalCreditSm09 = 0;
+	var totalGradeSm09 = 0;
+
+		for (var a = 0; a < sm09.length; a++) {
+			totalCreditSm09 += sm09[a][1];
+			var temp = sm09[a][0] * sm09[a][1];
+			totalGradeSm09 += temp;
+			}
+
+	totalGrade += totalGradeSm09;
+	totalCredit += totalCreditSm09;
+
+	var ips_sm09 = totalGradeSm09 / totalCreditSm09;
+
+	// Semester 10
+	var sm10 = [];
+
+	var nl01_sm10 = index(document.getElementById("nl01_sm10").value);
+	var nl02_sm10 = index(document.getElementById("nl02_sm10").value);
+	var nl03_sm10 = index(document.getElementById("nl03_sm10").value);
+	var nl04_sm10 = index(document.getElementById("nl04_sm10").value);
+	var nl05_sm10 = index(document.getElementById("nl05_sm10").value);
+	var nl06_sm10 = index(document.getElementById("nl06_sm10").value);
+	var nl07_sm10 = index(document.getElementById("nl07_sm10").value);
+	var nl08_sm10 = index(document.getElementById("nl08_sm10").value);
+	var nl09_sm10 = index(document.getElementById("nl09_sm10").value);
+	var nl10_sm10 = index(document.getElementById("nl10_sm10").value);
+
+	var sk01_sm10 = parseInt(document.getElementById("sk01_sm10").value);
+	var sk02_sm10 = parseInt(document.getElementById("sk02_sm10").value);
+	var sk03_sm10 = parseInt(document.getElementById("sk03_sm10").value);
+	var sk04_sm10 = parseInt(document.getElementById("sk04_sm10").value);
+	var sk05_sm10 = parseInt(document.getElementById("sk05_sm10").value);
+	var sk06_sm10 = parseInt(document.getElementById("sk06_sm10").value);
+	var sk07_sm10 = parseInt(document.getElementById("sk07_sm10").value);
+	var sk08_sm10 = parseInt(document.getElementById("sk08_sm10").value);
+	var sk09_sm10 = parseInt(document.getElementById("sk09_sm10").value);
+	var sk10_sm10 = parseInt(document.getElementById("sk10_sm10").value);
+
+		if (nl01_sm10 != null){ sm10.push([nl01_sm10, sk01_sm10]); }
+		if (nl02_sm10 != null){ sm10.push([nl02_sm10, sk02_sm10]); }
+		if (nl03_sm10 != null){ sm10.push([nl03_sm10, sk03_sm10]); }
+		if (nl04_sm10 != null){ sm10.push([nl04_sm10, sk04_sm10]); }
+		if (nl05_sm10 != null){ sm10.push([nl05_sm10, sk05_sm10]); }
+		if (nl06_sm10 != null){ sm10.push([nl06_sm10, sk06_sm10]); }
+		if (nl07_sm10 != null){ sm10.push([nl07_sm10, sk07_sm10]); }
+		if (nl08_sm10 != null){ sm10.push([nl08_sm10, sk08_sm10]); }
+		if (nl09_sm10 != null){ sm10.push([nl09_sm10, sk09_sm10]); }
+		if (nl10_sm10 != null){ sm10.push([nl10_sm10, sk10_sm10]); }
+
+		if (sm10.length > 0) { grade.push(sm10); }
+
+	var totalCreditSm10 = 0;
+	var totalGradeSm10 = 0;
+
+		for (var a = 0; a < sm10.length; a++) {
+			totalCreditSm10 += sm10[a][1];
+			var temp = sm10[a][0] * sm10[a][1];
+			totalGradeSm10 += temp;
+			}
+
+	totalGrade += totalGradeSm10;
+	totalCredit += totalCreditSm10;
+	
+	var ips_sm10 = totalGradeSm10 / totalCreditSm10;
+
+	// GPA Calculation
+	var ipk = totalGrade / totalCredit;
+
+	// Output
+	document.getElementById("ips_sm01").innerHTML = "IPS : " + semesterCheck(ips_sm01);
+	document.getElementById("ips_sm02").innerHTML = "IPS : " + semesterCheck(ips_sm02);
+	document.getElementById("ips_sm03").innerHTML = "IPS : " + semesterCheck(ips_sm03);
+	document.getElementById("ips_sm04").innerHTML = "IPS : " + semesterCheck(ips_sm04);
+	document.getElementById("ips_sm05").innerHTML = "IPS : " + semesterCheck(ips_sm05);
+	document.getElementById("ips_sm06").innerHTML = "IPS : " + semesterCheck(ips_sm06);
+	document.getElementById("ips_sm07").innerHTML = "IPS : " + semesterCheck(ips_sm07);
+	document.getElementById("ips_sm08").innerHTML = "IPS : " + semesterCheck(ips_sm08);
+	document.getElementById("ips_sm09").innerHTML = "IPS : " + semesterCheck(ips_sm09);
+	document.getElementById("ips_sm10").innerHTML = "IPS : " + semesterCheck(ips_sm10);
+
+	document.getElementById("sks_sm01").innerHTML = "Total SKS : " + creditCheck(totalCreditSm01);
+	document.getElementById("sks_sm02").innerHTML = "Total SKS : " + creditCheck(totalCreditSm02);
+	document.getElementById("sks_sm03").innerHTML = "Total SKS : " + creditCheck(totalCreditSm03);
+	document.getElementById("sks_sm04").innerHTML = "Total SKS : " + creditCheck(totalCreditSm04);
+	document.getElementById("sks_sm05").innerHTML = "Total SKS : " + creditCheck(totalCreditSm05);
+	document.getElementById("sks_sm06").innerHTML = "Total SKS : " + creditCheck(totalCreditSm06);
+	document.getElementById("sks_sm07").innerHTML = "Total SKS : " + creditCheck(totalCreditSm07);
+	document.getElementById("sks_sm08").innerHTML = "Total SKS : " + creditCheck(totalCreditSm08);
+	document.getElementById("sks_sm09").innerHTML = "Total SKS : " + creditCheck(totalCreditSm09);
+	document.getElementById("sks_sm10").innerHTML = "Total SKS : " + creditCheck(totalCreditSm10);
+
+	document.getElementById("ipk").innerHTML = "Jumlah Nilai Kumulatif : " + totalGrade.toFixed(2).toString() 
+		+ " <br>Jumlah SKS Ditempuh: " + totalCredit.toString() + " <h3><br>Indeks Prestasi Kumulatif :<b> " + semesterCheck(ipk);
+	}
+
+</script>
 </body>
 </html>
