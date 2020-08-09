@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Final Grade Calculator</title>
+  <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container-fluid mw-100 mh-100 bg-dark" style="border:0;margin-bottom:-1000px;padding-bottom:1000px;">
+	<form action="javascript:count()">
+	  <div class="card mb-3 mw-100 mh-100 bg-dark" style="border:0">
+		<div class="card mt-3 mw-100 mh-100 text-white bg-dark" style="border:0">
+		  <center><h3>Final Grade Calculator</h3></center>
+		</div>
+
+  <div class="card-body mw-100 mh-100 text-black bg-dark" style="border:0">
+	<div class="row mb-2 mw-100 mh-100" style="border:0">
+	  <div class="col-md-12 col-lg-12 text-center">
+		<p class="text-secondary text-light	">Kalkulator ini dapat digunakan untuk menghitung Nilai Akhir (Final Grade) Mata Kuliah<br>
+            Standar bobot Indeks Nilai yang digunakan adalah sebagai berikut:<br>
+              A &ge; 90; A- &ge; 85; B+ &ge; 80; B &ge; 75; B- &ge; 70; C+ &ge; 65; C &ge; 60; C- &ge; 55; D &ge; 40; E &ge; 0<br>
+              Standar kelulusan yang digunakan adalah C- atau setara dengan Nilai Akhir 55,00<br><br>
+               <b>Semua kolom Nilai dan kolom Persentase wajib diisi<br> 
+                Apabila terdapat kolom yang tidak perlu, silahkan isi dengan angka 0</b> </p>
+            
+            </div>
+       </div>
+
+    <!-- Final Grade -->
+
+	<div class="row mb-4">
+		<div class="col-lg-6 col-sm-12">
+			<div class="card" style="border:0">
+		  		<div class="card-header bg-secondary text-white">
+					<center><h5>Nilai Akhir Mata Kuliah</h5></center>
+	</div>
+									
+		
+	<div class="card-body bg-dark">
+		<div class="row mb-1">
+			<div class="col-4">
+				<div class="text-center">
+					<input type="text" id="nm01_final" class="form-control" placeholder="Komponen Penilaian">
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="input-group">
+					<input id="sc01_final" type="number"
+                        title="A/B/C/D/E" min="0" max="100" pattern="[0-9]+([\.,][0-9]+)?" step="0.01" class="form-control" 
+                            required placeholder="Nilai" oninvalid="this.setCustomValidity('Isi dengan 0 apabila tidak perlu')"
+                            oninput="this.setCustomValidity('')">
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="input-group">
+                    <input id="lg01_final" type="number" min="0" max="99" class="form-control" required placeholder="Persentase (%)" 
+                        oninvalid="this.setCustomValidity('Isi dengan 0 apabila tidak perlu')" oninput="this.setCustomValidity('')">
+				</div>
+			</div>
+		</div>
+
+		<div class="row mb-1">
+			<div class="col-4">
+				<div class="input-group">
+					<input type="text" id="nm02_final" class="form-control" placeholder="Komponen Penilaian">
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="input-group">
+                    <input id="sc02_final" type="number" title="A/B/C/D/E" min="0" max="100" pattern="[0-9]+([\.,][0-9]+)?" step="0.01"
+                    class="form-control" required placeholder="Nilai" oninvalid="this.setCustomValidity('Isi dengan 0 apabila tidak perlu')"
+                    oninput="this.setCustomValidity('')">
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="input-group">
+                    <input id="lg02_final" type="number" min="0" max="99" class="form-control" required placeholder="Persentase (%)"
+                    oninvalid="this.setCustomValidity('Isi dengan 0 apabila tidak perlu')" oninput="this.setCustomValidity('')">
+				</div>
+			</div>
+		</div>
+
+		<div class="row mb-1">
+			<div class="col-4">
+				<div class="input-group">
+					<input type="text" id="nm03_final" class="form-control" placeholder="Komponen Penilaian">
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="input-group">
+                    <input id="sc03_final" type="number" title="A/B/C/D/E" min="0" max="100" pattern="[0-9]+([\.,][0-9]+)?" step="0.01"
+                    class="form-control" required placeholder="Nilai" oninvalid="this.setCustomValidity('Isi dengan 0 apabila tidak perlu')"
+                    oninput="this.setCustomValidity('')">
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="input-group">
+                    <input id="lg03_final" type="number" min="0" max="99" class="form-control" required placeholder="Persentase (%)"
+                    oninvalid="this.setCustomValidity('Isi dengan 0 apabila tidak perlu')" oninput="this.setCustomValidity('')">
+				</div>
+			</div>
+		</div>
+
+		<div class="row mb-1">
+			<div class="col-4">
+				<div class="input-group">
+					<input type="text" id="nm04_final" class="form-control" placeholder="Komponen Penilaian">
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="input-group">
+                    <input id="sc04_final"  type="number" title="A/B/C/D/E" min="0" max="100" pattern="[0-9]+([\.,][0-9]+)?" step="0.01"
+                    class="form-control" required placeholder="Nilai" oninvalid="this.setCustomValidity('Isi dengan 0 apabila tidak perlu')"
+                    oninput="this.setCustomValidity('')">
+						
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="input-group">
+                    <input id="lg04_final" type="number" min="0" max="99" class="form-control" required placeholder="Persentase (%)"
+                    oninvalid="this.setCustomValidity('Isi dengan 0 apabila tidak perlu')" oninput="this.setCustomValidity('')">
+				</div>
+			</div>
+		</div>
+
+		<div class="row mb-1">
+			<div class="col-4">
+				<div class="input-group">
+					<input type="text" id="nm05_final" class="form-control" placeholder="Komponen Penilaian">
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="input-group">
+                    <input id="sc05_final"  type="number" title="A/B/C/D/E" min="0" max="100" pattern="[0-9]+([\.,][0-9]+)?" step="0.01"
+                    class="form-control" required placeholder="Nilai" oninvalid="this.setCustomValidity('Isi dengan 0 apabila tidak perlu')"
+                    oninput="this.setCustomValidity('')">
+						
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="input-group">
+                    <input id="lg05_final" type="number" min="0" max="99" class="form-control" required placeholder="Persentase (%)"
+                    oninvalid="this.setCustomValidity('Isi dengan 0 apabila tidak perlu')" oninput="this.setCustomValidity('')">
+				</div>
+			</div>
+		</div>
+
+		<div class="row mb-1">
+			<div class="col-4">
+				<div class="input-group">
+					<input type="text" id="nm06_final" class="form-control" placeholder="Komponen Penilaian">
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="input-group">
+                    <input id="sc06_final"  type="number" title="A/B/C/D/E" min="0" max="100" pattern="[0-9]+([\.,][0-9]+)?" step="0.01"
+                    class="form-control" required placeholder="Nilai" oninvalid="this.setCustomValidity('Isi dengan 0 apabila tidak perlu')"
+                    oninput="this.setCustomValidity('')">
+						
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="input-group">
+                    <input id="lg06_final" type="number" min="0" max="99" class="form-control" required placeholder="Persentase (%)" 
+                    oninvalid="this.setCustomValidity('Isi dengan 0 apabila tidak perlu')" oninput="this.setCustomValidity('')">
+				</div>
+			</div>
+		</div>
+		   
+	<div class="card-footer bg-secondary text-white mt-2">
+		<center><h6 id="grade">Nilai Akhir : 0.00</h6> <h6 id="index">Indeks Nilai     : E</h6></center>
+		</div>
+	
+
+    <div class="row mt-4 text-center">
+        <div class="col-sm-12 text-center"></div></div>
+            <center><button class="btn btn-lg btn-block btn-primary" style="width:400px"; type="submit">Hitung Nilai Akhir</button></center>
+    </div>
+
+</div>
+</div>
+</div>
+</form>
+</div>
+
+<script type="text/javascript">
+    // Calculation
+	function count(){
+
+        var scoreOne = document.getElementById('sc01_final').value;
+        var scoreTwo = document.getElementById('sc02_final').value;
+        var scoreThree = document.getElementById('sc03_final').value;
+        var scoreFour = document.getElementById('sc04_final').value;
+        var scoreFive = document.getElementById('sc05_final').value;
+        var scoreSix = document.getElementById('sc06_final').value;
+       
+        
+        var logOne = document.getElementById('lg01_final').value;
+        var logTwo = document.getElementById('lg02_final').value;
+        var logThree = document.getElementById('lg03_final').value;
+        var logFour = document.getElementById('lg04_final').value;
+        var logFive = document.getElementById('lg05_final').value;
+        var logSix = document.getElementById('lg06_final').value;
+      
+        var componentOne = parseFloat(scoreOne)
+        var componentTwo = parseFloat(scoreTwo);
+        var componentThree = parseFloat(scoreThree);
+        var componentFour = parseFloat(scoreFour); 
+        var componentFive = parseFloat(scoreFive);
+        var componentSix = parseFloat(scoreSix);
+
+        var percentageOne = parseInt(logOne);
+        var percentageTwo = parseInt(logTwo);
+        var percentageThree = parseInt(logThree);
+        var percentageFour = parseInt(logFour); 
+        var percentageFive = parseInt(logFive);
+        var percentageSix = parseInt(logSix);
+        
+        var resultOne = (componentOne / 100 * percentageOne)
+        var resultTwo = (componentTwo / 100 * percentageTwo);
+        var resultThree = (componentThree / 100 * percentageThree);
+        var resultFour = (componentFour / 100 * percentageFour);
+        var resultFive = (componentFive / 100 * percentageFive);
+        var resultSix = (componentSix / 100 * percentageSix);
+        
+            if ((percentageOne + percentageTwo + percentageThree + percentageFour + percentageFive + percentageSix) != 100)
+                alert("Total persentase tidak sama dengan 100%");
+          
+
+        var grade = (resultOne + resultTwo + resultThree + resultFour + resultFive + resultSix);
+        
+            if (grade >= 90 && grade <= 100){
+                index = 'A<br><br>Selamat, Anda lulus mata kuliah ini!';
+            }   else if (grade >= 85  && grade <= 89.99){
+                    index = 'A-<br><br>Selamat, Anda lulus mata kuliah ini!';
+            }   else if (grade >= 80 && grade <= 84.99){
+                    index = 'B+<br><br>Selamat, Anda lulus mata kuliah ini!';
+            }   else if (grade >= 75 && grade <= 79.99) {
+                    index = 'B<br><br>Selamat, Anda lulus mata kuliah ini!';
+            }   else if (grade >= 70 && grade <= 74.99) {
+                    index = 'B-<br><br>Selamat, Anda lulus mata kuliah ini!'
+            }   else if (grade >= 65 && grade <= 69.99) {
+                    index = 'C+<br><br>Selamat, Anda lulus mata kuliah ini!'
+            }   else if (grade >= 60 && grade <= 64.99) {
+                    index = 'C<br><br>Selamat, Anda lulus mata kuliah ini!'
+            }   else if (grade >= 55 && grade <= 59.99) {
+                    index = 'C-<br><br>Selamat, Anda lulus mata kuliah ini!'
+            }   else if (grade >= 40 && grade <= 54.99) {
+                    index = 'D<br><br>Anda gagal dalam mata kuliah ini.<br>Silahkan mengulang tahun depan!'
+            }   else if (grade >= 0 && grade <= 39.99) {
+                    index = 'E<br><br>Anda gagal dalam mata kuliah ini.<br>Silahkan mengulang tahun depan!'
+            }   else {
+                    index = 'Invalid grade!'
+            }
+
+    // Output
+    document.getElementById("grade").innerHTML = "Nilai Akhir : " + (grade.toFixed(2));
+    document.getElementById("index").innerHTML = "Indeks Nilai : " + (index);
+
+	}
+	
+</script>
+</body>
+</html>
