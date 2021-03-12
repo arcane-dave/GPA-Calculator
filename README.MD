@@ -2,6 +2,7 @@
 
 GPA Calculator is a simple calculator created using HTML, JavaScript and Bootstrap 4.
 Its purpose is to count Cumulative GPA, Semester GPA, and Subject Final Grade.
+You can access it through https://itsarcanedave.github.io/GPA-Calculator/
 
 ## Installation
 
