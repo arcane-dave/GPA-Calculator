@@ -15,3 +15,7 @@ Run index.html
 ## Contributing
 
 Suggestions for improvements are always welcome. Please contact the author on Instagram: @arcanedave
+
+## Documentation
+![alt text](https://github.com/itsarcanedave/GPA-Calculator/blob/master/GPA-1.jpg?raw=true)
+![alt text](https://github.com/itsarcanedave/GPA-Calculator/blob/master/GPA-2.jpg?raw=true)
